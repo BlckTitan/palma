@@ -13,7 +13,13 @@ function App() {
         <div className="sidebar">
           <Sidebar/>
         </div>
-        <div className='form_component'>main form</div>
+        <div className='form_component w-full h-full  text-blue-950'>
+          main form
+          <div>
+            <button>Back</button>
+            <button className='w-32 h-16 text-white text-xl rounded-lg bg-blue-600'>Next Step</button>
+          </div>
+        </div>
       </form>
     </div>
   );
