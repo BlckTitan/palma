@@ -1,8 +1,11 @@
 //style
 import './style/style.css';
 //component
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
+import YourInfo from './components/yourInfo/YourInfo';
 function App() {
+
+  
   
   return (
     <div className="
@@ -14,11 +17,9 @@ function App() {
           <Sidebar/>
         </div>
         <div className='form_component w-full h-full  text-blue-950'>
-          main form
-          <div>
-            <button>Back</button>
-            <button className='w-32 h-16 text-white text-xl rounded-lg bg-blue-600'>Next Step</button>
-          </div>
+          
+          <YourInfo/>
+
         </div>
       </form>
     </div>
