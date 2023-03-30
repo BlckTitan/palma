@@ -1,6 +1,6 @@
 div.yourInfo_container{
     position: relative;
-    padding: 5rem 10rem 0 10rem;
+    padding: 5rem 10rem 1rem 10rem;
 }
 div.field_label_inputs input:active,
 div.field_label_inputs input:focus,
