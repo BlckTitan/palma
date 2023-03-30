@@ -1,0 +1,14 @@
+form{
+    padding: 1.5rem;
+}
+div.sidebar{
+    background-image: url('../assets/images/bg-sidebar-desktop.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex: 3;
+    height: 100%;
+}
+div.form_component{
+    flex: 10;
+}
