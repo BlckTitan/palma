@@ -12,6 +12,7 @@ div.field_label_inputs input.error{
 }
 div.field_label_inputs input{
     border: 2px solid #9ca3af;
+    padding: 1rem;
 }
 footer > button.btn_back{
     color: var(--dark-blue);

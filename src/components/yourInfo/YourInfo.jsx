@@ -4,9 +4,9 @@ import './style/yourInfo_style.css';
 export default function YourInfo() {
     
     const personal_info_inputs = [
-        {labels: 'name', title: 'Name', input_type: 'text'},
-        {labels: 'email', title: 'Email Address', input_type: 'email'},
-        {labels: 'phone', title: 'Phone Number', input_type: 'tel'},
+        {labels: 'name', title: 'Name', input_type: 'text', dummy_text: 'Ugorji Victor'},
+        {labels: 'email', title: 'Email Address', input_type: 'email', dummy_text: 'email@email.com'},
+        {labels: 'phone', title: 'Phone Number', input_type: 'tel', dummy_text: 'e.g. +234 813 000 0039'},
       ]
 
   return (
@@ -32,9 +32,10 @@ export default function YourInfo() {
                     </div>
 
                     <input 
-                      className='w-full h-12 text-xl rounded-md'
+                      className='w-full h-14 text-xl rounded-md'
                       id={inputs.labels} 
                       type={inputs.input_type} 
+                      placeholder={inputs.dummy_text}
                       required
                     />
 
