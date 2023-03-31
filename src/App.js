@@ -2,7 +2,7 @@
 import './style/style.css';
 //component
 import Sidebar from './components/sidebar/Sidebar';
-import YourInfo from './components/yourInfo/YourInfo';
+//import YourInfo from './components/yourInfo/YourInfo';
 import Plan from './components/plan/Plan';
 function App() {
 

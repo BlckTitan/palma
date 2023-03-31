@@ -1,0 +1,18 @@
+div.addOns_container{
+    position: relative;
+    padding: 4rem 10rem 1rem 10rem;
+}
+div.field_label_inputs > label.selectable_cards > input.checkbox:checked ~ div.card_details{
+    border: 1px solid var(--marine-blue);
+    background-color: rgb(248 250 252);
+}
+div.field_label_inputs > label.selectable_cards:hover > div.card_details{
+    border: 1px solid var(--marine-blue);
+}
+footer > button.btn_back{
+    color: var(--dark-blue);
+}
+footer > button.btn_next{
+    background-color: var(--dark-blue);
+    color: #fff;
+}
