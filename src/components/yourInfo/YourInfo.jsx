@@ -46,8 +46,8 @@ export default function YourInfo() {
           </div>
 
           <footer className='w-full h-1/6 form_container flex justify-between items-end'>
-            <button className='btn_back w-32 h-16 text-xl font-semibold'>Back</button>
-            <button className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-lg'>Next Step</button>
+            <button className='btn_back w-32 h-16 text-xl font-semibold invisible'>Go Back</button>
+            <button className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'>Next Step</button>
           </footer>
     </div>
   )

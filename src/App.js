@@ -3,6 +3,7 @@ import './style/style.css';
 //component
 import Sidebar from './components/sidebar/Sidebar';
 import YourInfo from './components/yourInfo/YourInfo';
+import Plan from './components/plan/Plan';
 function App() {
 
   
@@ -17,9 +18,7 @@ function App() {
           <Sidebar/>
         </div>
         <div className='form_component w-full h-full  text-blue-950'>
-          
-          <YourInfo/>
-
+          <Plan/>
         </div>
       </form>
     </div>
@@ -28,3 +27,4 @@ function App() {
 
 export default App;
 //bg-cyan-100'
+//<YourInfo/>
