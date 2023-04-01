@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
+div.addOns_container{
+    position: relative;
+    padding: 4rem 10rem 1rem 10rem;
+}
+div.field_label_inputs > label.selectable_cards:has(input.checkbox:checked){
+    border: 1px solid var(--purplish-blue);
+    background-color: rgb(248 250 252);
+}
+div.field_label_inputs > label.selectable_cards:hover{
+    border: 1px solid var(--purplish-blue);
+}
+div.field_label_inputs > label.selectable_cards > span.price,
+div.field_label_inputs > label.selectable_cards > input{
+    color: var(--purplish-blue);
+}
+div.field_label_inputs > label.selectable_cards > input{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 28px;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+    border: 1px solid #d5d5d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.field_label_inputs > label.selectable_cards > input::after{
+    content: '\e876';
+    font-size: 1.7rem;
+    font-weight: 900;
+    font-family: 'Material Symbols Outlined';
+    background-color: var(--purplish-blue);
+    width: auto;
+    height: 30px;
+    border-radius: 0.3rem;
+    display: none;
+}
+div.field_label_inputs > label.selectable_cards > input.checkbox:checked::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer > button.btn_back{
+    color: var(--dark-blue);
+}
+footer > button.btn_next{
+    background-color: var(--dark-blue);
+    color: #fff;
+}
+/**var(--purplish-blue)*/

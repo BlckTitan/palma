@@ -3,7 +3,8 @@ import './style/style.css';
 //component
 import Sidebar from './components/sidebar/Sidebar';
 //import YourInfo from './components/yourInfo/YourInfo';
-import Plan from './components/plan/Plan';
+//import Plan from './components/plan/Plan';
+import AddOns from './components/AddOns/AddOns';
 function App() {
 
   
@@ -18,7 +19,7 @@ function App() {
           <Sidebar/>
         </div>
         <div className='form_component w-full h-full  text-blue-950'>
-          <Plan/>
+          <AddOns/>
         </div>
       </form>
     </div>
