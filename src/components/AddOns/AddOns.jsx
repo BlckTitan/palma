@@ -13,7 +13,7 @@ export default function AddOns({userPlan}) {
         <div className='w-full h-5/6'>
             <header>
               <h1 className='text-5xl font-bold'>Pick Add-ons</h1>
-              <p className='text-xl text-gray-400 mt-4 mb-14'>
+              <p className='text-xl text-gray-400 mt-4 mb-6'>
                Add-ons help enhance your gaming experience.
               </p>
             </header>
@@ -21,7 +21,7 @@ export default function AddOns({userPlan}) {
             <div className='field_label_inputs flex flex-col'>
               {addOns_inputs.map((addOns, index) => (
                 <label for={addOns.title} className='selectable_cards 
-                      relative w-full h-30 rounded-lg 
+                      relative w-full h-28 rounded-lg 
                       cursor-pointer px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300

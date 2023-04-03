@@ -4,10 +4,10 @@ import './style/style.css';
 import Sidebar from './components/sidebar/Sidebar';
 //import YourInfo from './components/yourInfo/YourInfo';
 //import Plan from './components/plan/Plan';
-import AddOns from './components/AddOns/AddOns';
+//import AddOns from './components/addOns/AddOns';
+//import Summary from './components/summary/Summary';
+import ThankYou from './components/thankYou/ThankYou'
 function App() {
-
-  
   
   return (
     <div className="
@@ -19,7 +19,7 @@ function App() {
           <Sidebar/>
         </div>
         <div className='form_component w-full h-full  text-blue-950'>
-          <AddOns/>
+          <ThankYou/>
         </div>
       </form>
     </div>

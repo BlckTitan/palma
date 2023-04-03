@@ -1,0 +1,20 @@
+div.summary_container{
+    position: relative;
+    padding: 4rem 10rem 1rem 10rem;
+}
+div.summary_report button.btn_change:hover{
+    color:  rgb(107 114 128);
+}
+div.summary_report  span.total_price{
+    font-size: 1.5rem;
+    color: var(--purplish-blue);
+}
+
+footer > button.btn_back{
+    color: var(--dark-blue);
+}
+footer > button.btn_confirm{
+    background-color: var(--purplish-blue);
+    color: #fff;
+}
+/**var(--purplish-blue)*/
