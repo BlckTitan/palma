@@ -19,7 +19,7 @@ export default function ThankYou() {
           If you ever need support, 
           please feel free to email us at support@loremgaming.com.
         </p>
-    </div>
+      </div>
     </div>
   )
 }

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function Sidebar() {
+    const step = useSelector((state) => state.formStep.step)
+
     const sidebar_items = [
         {step_count: 1, step: 'STEP 1', step_title: 'YOUR INFO'},
         {step_count: 2, step: 'STEP 2', step_title: 'SELECT PLAN'},
@@ -14,7 +17,11 @@ export default function Sidebar() {
         {
             sidebar_items.map((item, index) => (
                 <li className='flex items-center w-full h-16 mt-4 pl-14 text-white' key={index}>
-                <div className='step_count flex justify-center items-center mr-6 text-2xl w-12 h-12 rounded-full border-cyan-100 border-2 border-solid'>
+                <div 
+                    className={ (step === item.step_count) ? 
+                    'step_count flex justify-center items-center mr-6 text-2xl w-12 h-12 rounded-full bg-cyan-100 text-blue-950' : 
+                    'step_count flex justify-center items-center mr-6 text-2xl w-12 h-12 rounded-full border-cyan-100 border-2 border-solid'}
+                >
                     <span>{item.step_count}</span>
                 </div>
                 <div className='step_title'>

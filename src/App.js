@@ -6,7 +6,7 @@ import Sidebar from './components/sidebar/Sidebar';
 //import Plan from './components/plan/Plan';
 //import AddOns from './components/addOns/AddOns';
 //import Summary from './components/summary/Summary';
-import ThankYou from './components/thankYou/ThankYou'
+import ThankYou from './components/thankYou/ThankYou';
 function App() {
   
   return (
