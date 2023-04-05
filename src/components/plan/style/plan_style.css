@@ -2,11 +2,11 @@ div.plan_container{
     position: relative;
     padding: 4rem 10rem 1rem 10rem;
 }
-div.field_label_inputs > label.selectable_cards > input.checkbox:checked ~ div.card_details{
+div.planCards > label.selectable_cards > input.plan:checked ~ div.card_details{
     border: 1px solid var(--marine-blue);
     background-color: rgb(248 250 252);
 }
-div.field_label_inputs > label.selectable_cards:hover > div.card_details{
+div.planCards > label.selectable_cards:hover > div.card_details{
     border: 1px solid var(--marine-blue);
 }
 div.toggle_fill{
@@ -23,7 +23,7 @@ div.toggle_fill::after{
     border-radius: 100%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s;
+    transition: all 0.2s ease-in-out;
 }
 label > input:checked ~ div.toggle_fill::after{
     transform: translateX(1.6rem);

@@ -1,7 +1,12 @@
 import React from 'react';
 import './style/addOns_style.css';
+import { useDispatch } from 'react-redux';
+import { nextStep, prevStep } from '../../app/purchaseSlice/purchaseSlice';
 
 export default function AddOns({userPlan}) {
+  
+    const dispatch = useDispatch()
+
     const addOns_inputs = [
         {title: 'Online service', price_label_year: '+$10/yr', price_year: 10, description: 'Access to multiplayer games', price_label_month: '$1/mo', price_month: 1,},
         {title: 'Larger storage', price_label_year: '+$20/yr', price_year: 20, description: 'Extra 1TB of cloud save', price_label_month: '$2/mo', price_month: 2},
@@ -18,7 +23,7 @@ export default function AddOns({userPlan}) {
               </p>
             </header>
 
-            <div className='field_label_inputs flex flex-col'>
+            <div className='addOns_list flex flex-col'>
               {addOns_inputs.map((addOns, index) => (
                 <label for={addOns.title} className='selectable_cards 
                       relative w-full h-28 rounded-lg 
@@ -45,8 +50,14 @@ export default function AddOns({userPlan}) {
           </div>
 
           <footer className='w-full h-1/6 form_container flex justify-between items-end'>
-            <button className='btn_back w-32 h-16 text-xl font-semibold'>Go Back</button>
-            <button className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'>Next Step</button>
+            <button 
+              className='btn_back w-32 h-16 text-xl font-semibold'
+              onClick={() => dispatch(prevStep())}
+            >Go Back</button>
+            <button 
+              className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'
+              onClick={() => dispatch(nextStep())}
+            >Next Step</button>
           </footer>
     </div>
   )

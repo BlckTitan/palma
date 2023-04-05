@@ -3,18 +3,18 @@ div.addOns_container{
     position: relative;
     padding: 4rem 10rem 1rem 10rem;
 }
-div.field_label_inputs > label.selectable_cards:has(input.checkbox:checked){
+div.addOns_list > label.selectable_cards:has(input.checkbox:checked){
     border: 1px solid var(--purplish-blue);
     background-color: rgb(248 250 252);
 }
-div.field_label_inputs > label.selectable_cards:hover{
+div.addOns_list > label.selectable_cards:hover{
     border: 1px solid var(--purplish-blue);
 }
-div.field_label_inputs > label.selectable_cards > span.price,
-div.field_label_inputs > label.selectable_cards > input{
+div.addOns_list > label.selectable_cards > span.price,
+div.addOns_list > label.selectable_cards > input{
     color: var(--purplish-blue);
 }
-div.field_label_inputs > label.selectable_cards > input{
+div.addOns_list > label.selectable_cards > input{
     appearance: none;
     -webkit-appearance: none;
     width: 30px;
@@ -29,7 +29,7 @@ div.field_label_inputs > label.selectable_cards > input{
     justify-content: center;
     align-items: center;
 }
-div.field_label_inputs > label.selectable_cards > input::after{
+div.addOns_list > label.selectable_cards > input::after{
     content: '\e876';
     font-size: 1.7rem;
     font-weight: 900;
@@ -40,7 +40,7 @@ div.field_label_inputs > label.selectable_cards > input::after{
     border-radius: 0.3rem;
     display: none;
 }
-div.field_label_inputs > label.selectable_cards > input.checkbox:checked::after{
+div.addOns_list > label.selectable_cards > input.checkbox:checked::after{
     display: flex;
     justify-content: center;
     align-items: center;

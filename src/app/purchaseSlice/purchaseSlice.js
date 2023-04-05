@@ -5,11 +5,17 @@ export const purchaseSlice = createSlice({
     initialState: {
         step: 1,
     },
-    reducer: {
+    reducers: {
+        nextStep: (state) => {
+            state.step += 1
+        },
+        prevStep: (state) => {
+            state.step -= 1
+        },
         changeStep: (state, action) => {
-            state.step = action.payload
+            state.step -= action.payload
         }
     }
 });
-export const { changeStep } = purchaseSlice.actions
+export const { nextStep, prevStep, changeStep } = purchaseSlice.actions
 export default purchaseSlice.reducer

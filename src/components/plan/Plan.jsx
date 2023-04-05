@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
+//style
 import './style/plan_style.css';
+//icon
 import icon_arcade from '../../assets/images/icon-arcade.svg';
 import icon_advanced from '../../assets/images/icon-advanced.svg';
 import icon_pro from '../../assets/images/icon-pro.svg';
+import { useDispatch } from 'react-redux';
+import { nextStep, prevStep } from '../../app/purchaseSlice/purchaseSlice';
 
 export default function Plan() {
     const [monthlyDuration, setMonthlyDuration] = useState(true)
+
+    const dispatch = useDispatch()
+
     const plan_inputs = [
         {icon: <img src={icon_arcade} alt=''/>, title: 'Arcade', price_label_year: '$90/yr', price_year: 90, free: '2 months free', price_label_month: '$9/mo', price_month: 9,},
         {icon: <img src={icon_advanced} alt=''/>, title: 'Advanced', price_label_year: '$120/yr', price_year: 120, free: '2 months free', price_label_month: '$12/mo', price_month: 12},
@@ -22,10 +29,10 @@ export default function Plan() {
               </p>
             </header>
 
-            <div className='field_label_inputs flex flex-wrap items-center justify-between'>
+            <div className='planCards flex flex-wrap items-center justify-between'>
               {plan_inputs.map((plans, index) => (
                 <label for={plans.title} className='selectable_cards block relative w-52 h-60 cursor-pointer' key={index}>
-                  <input id={plans.title} type='checkbox' value={(monthlyDuration === true) ? plans.price_month : plans.price_year} className='checkbox hidden'/>
+                  <input id={plans.title} name='subPlan' type='radio' value={(monthlyDuration === true) ? plans.price_month : plans.price_year} className='plan hidden'/>
                   <div className='card_details 
                             flex flex-col
                             w-full h-full 
@@ -55,8 +62,8 @@ export default function Plan() {
           </div>
 
           <footer className='w-full h-1/6 form_container flex justify-between items-end'>
-            <button className='btn_back w-32 h-16 text-xl font-semibold'>Go Back</button>
-            <button className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'>Next Step</button>
+            <button className='btn_back w-32 h-16 text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
+            <button className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl' onClick={() => dispatch(nextStep())}>Next Step</button>
           </footer>
     </div>
   )

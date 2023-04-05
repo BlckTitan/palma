@@ -2,13 +2,14 @@
 import './style/style.css';
 //component
 import Sidebar from './components/sidebar/Sidebar';
-//import YourInfo from './components/yourInfo/YourInfo';
-//import Plan from './components/plan/Plan';
-//import AddOns from './components/addOns/AddOns';
-//import Summary from './components/summary/Summary';
+import YourInfo from './components/yourInfo/YourInfo';
+import Plan from './components/plan/Plan';
+import AddOns from './components/addOns/AddOns';
+import Summary from './components/summary/Summary';
 import ThankYou from './components/thankYou/ThankYou';
+import { useSelector } from 'react-redux';
 function App() {
-  
+  const step = useSelector((state) => state.formStep.step)
   return (
     <div className="
       container max-w-full h-screen flex items-center justify-center
@@ -19,7 +20,11 @@ function App() {
           <Sidebar/>
         </div>
         <div className='form_component w-full h-full  text-blue-950'>
-          <ThankYou/>
+          {(step === 1) && <YourInfo/>}
+          {(step === 2) && <Plan/>}
+          {(step === 3) && <AddOns/>}
+          {(step === 4) && <Summary/>}
+          {(step === 5) && <ThankYou/>}
         </div>
       </form>
     </div>

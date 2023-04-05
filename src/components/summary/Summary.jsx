@@ -1,8 +1,9 @@
 import React from 'react';
 import './style/summary_style.css';
-
+import { useDispatch } from 'react-redux';
+import { changeStep, nextStep, prevStep } from '../../app/purchaseSlice/purchaseSlice';
 export default function Summary({userPlan}) {
-    
+    const dispatch = useDispatch();
 
   return (
     <div className='summary_container w-full h-full  text-blue-950'>
@@ -22,7 +23,10 @@ export default function Summary({userPlan}) {
                     <h3 className='text-2xl font-semibold text-blue-950'>Arcade(monthly)</h3>
                     <span className='text-2xl font-semibold text-blue-950'>$9/mo</span>
                   </div>
-                  <button className='btn_change text-xl text-gray-400 underline'>Change</button>
+                  <button 
+                    className='btn_change text-xl text-gray-400 underline'
+                    onClick={() => dispatch(changeStep(2))}
+                  >Change</button>
                 </header>
 
                 <div className='addOns py-8'>
@@ -50,8 +54,12 @@ export default function Summary({userPlan}) {
           </div>
 
           <footer className='w-full h-1/6 form_container flex justify-between items-end'>
-            <button className='btn_back w-32 h-16 text-xl font-semibold'>Go Back</button>
-            <button className='btn_confirm w-32 h-16 text-white text-xl font-semibold rounded-xl'>Confirm</button>
+            <button className='btn_back w-32 h-16 text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
+            <button 
+              className='btn_confirm w-32 h-16 text-white text-xl font-semibold rounded-xl' 
+              onClick={() => dispatch(nextStep())}
+              type='submit'
+            >Confirm</button>
           </footer>
     </div>
   )
