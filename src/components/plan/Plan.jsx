@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 //style
 import './style/plan_style.css';
 //icon
 import icon_arcade from '../../assets/images/icon-arcade.svg';
 import icon_advanced from '../../assets/images/icon-advanced.svg';
 import icon_pro from '../../assets/images/icon-pro.svg';
-import { useDispatch } from 'react-redux';
-import { nextStep, prevStep } from '../../app/purchaseSlice/purchaseSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { nextStep, prevStep, getPlan } from '../../app/purchaseSlice/purchaseSlice';
 
 export default function Plan() {
-    const [monthlyDuration, setMonthlyDuration] = useState(true)
+    const [monthlyDuration, setMonthlyDuration] = useState(true);
+    const [planCost, setPlanCost] = useState('');
+    const [billingType, setBillingType] = useState('');
+    const [planName, setPlanName] = useState('');
+    const data = useSelector((state) => state.subscriptionData)
 
     const dispatch = useDispatch()
 
@@ -17,7 +21,12 @@ export default function Plan() {
         {icon: <img src={icon_arcade} alt=''/>, title: 'Arcade', price_label_year: '$90/yr', price_year: 90, free: '2 months free', price_label_month: '$9/mo', price_month: 9,},
         {icon: <img src={icon_advanced} alt=''/>, title: 'Advanced', price_label_year: '$120/yr', price_year: 120, free: '2 months free', price_label_month: '$12/mo', price_month: 12},
         {icon: <img src={icon_pro} alt=''/>, title: 'Pro', price_label_year: '$150/yr', price_year: 150, free: '2 months free', price_label_month: '$15/mo', price_month: 15},
-      ]
+    ]
+    useEffect(()=>{
+      dispatch(getPlan([planName, planCost, monthlyDuration]))
+    }, [monthlyDuration, planName, planCost])
+  
+    console.log(data?.plan)
 
   return (
     <div className='plan_container w-full h-full  text-blue-950'>
@@ -31,8 +40,16 @@ export default function Plan() {
 
             <div className='planCards flex flex-wrap items-center justify-between'>
               {plan_inputs.map((plans, index) => (
-                <label for={plans.title} className='selectable_cards block relative w-52 h-60 cursor-pointer' key={index}>
-                  <input id={plans.title} name='subPlan' type='radio' value={(monthlyDuration === true) ? plans.price_month : plans.price_year} className='plan hidden'/>
+                <label htmlFor={plans.title} 
+                  className='selectable_cards block relative w-52 h-60 cursor-pointer' 
+                  key={index}
+                >
+                  <input id={plans.title} name='subPlan' type='radio' 
+                    onChange={() =>{
+                          setPlanName(plans.title)
+                          setPlanCost((monthlyDuration === true) ? plans.price_month : plans.price_year)
+                        }} 
+                    className='plan hidden'/>
                   <div className='card_details 
                             flex flex-col
                             w-full h-full 
@@ -52,8 +69,8 @@ export default function Plan() {
             <div className='duration w-full h-16 mt-8 flex items-center justify-center bg-gray-50 rounded-2xl'>
               
                 <span className={(monthlyDuration === true) ? 'mr-4 font-semibold text-xl' : 'mr-4 font-semibold text-xl text-gray-400'}>Monthly</span>
-                    <label for='sub_duration' className='w-14 h-8  cursor-pointer flex'>
-                      <input id='sub_duration' type='checkbox' className='hidden' onClick={() => setMonthlyDuration(!monthlyDuration)}/>
+                    <label htmlFor='sub_duration' className='w-14 h-8  cursor-pointer flex'>
+                      <input id='sub_duration' type='checkbox' className='hidden' value={monthlyDuration} onClick={() => setMonthlyDuration(!monthlyDuration)}/>
                       <div className='toggle_fill relative w-full h-full bg-blue-950 rounded-2xl'></div>
                     </label>
                 <span className={(monthlyDuration === false) ? 'ml-4 font-semibold text-xl' : 'ml-4 font-semibold text-xl text-gray-400'}>Yearly</span>

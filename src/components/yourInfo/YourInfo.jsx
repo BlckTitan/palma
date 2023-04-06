@@ -37,8 +37,6 @@ export default function YourInfo() {
     useEffect(()=>{
       dispatch(getPersonalInfo([name, email, phone]))
     }, [name, email, phone])
-    
-    console.log(data?.personalInfo, name, email, phone, data?.errorField, data?.errorMessage)
   return (
     <div className='yourInfo_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
@@ -53,7 +51,7 @@ export default function YourInfo() {
                   <div className='input_items mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
-                      <label for='name' className='text-xl font-normal mb-2'>
+                      <label htmlFor='name' className='text-xl font-normal mb-2'>
                         Name
                       </label>
                       <span className='error_message text-red-500 font-normal text-2xl'>
@@ -77,7 +75,7 @@ export default function YourInfo() {
                   <div className='input_items mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
-                      <label for='email' className='text-xl font-normal mb-2'>
+                      <label htmlFor='email' className='text-xl font-normal mb-2'>
                         Email Address
                       </label>
                       <span className='error_message text-red-500 font-normal text-2xl'>
@@ -101,7 +99,7 @@ export default function YourInfo() {
                   <div className='input_items mb-6'>
 
                   <div className='label_error flex justify-between items-center'>
-                    <label for='phone' className='text-xl font-normal mb-2'>
+                    <label htmlFor='phone' className='text-xl font-normal mb-2'>
                       Phone Number
                     </label>
                     <span className='error_message text-red-500 font-normal text-2xl'>
