@@ -4,6 +4,11 @@ export const purchaseSlice = createSlice({
     name: 'purchaseStep',
     initialState: {
         step: 1,
+        personalInfo: [],
+        plan: [], 
+        addOns: [],
+        errorMessage: '',
+        errorField: ''
     },
     reducers: {
         nextStep: (state) => {
@@ -14,8 +19,27 @@ export const purchaseSlice = createSlice({
         },
         changeStep: (state, action) => {
             state.step -= action.payload
+        },
+        getPersonalInfo: (state, action) => {
+            state.personalInfo = action.payload
+        },
+        getPlan: (state, action) => {
+            state.plan = action.payload
+        },
+        getAddOns: (state, action) => {
+            state.addOns = action.payload
+        },
+        getErrorMessage: (state, action) => {
+            state.errorMessage = action.payload
+        },
+        getErrorField: (state, action) => {
+            state.errorField = action.payload
         }
     }
 });
-export const { nextStep, prevStep, changeStep } = purchaseSlice.actions
+export const { 
+    nextStep, prevStep, changeStep,
+    getPersonalInfo, getPlan, getAddOns,
+    getErrorMessage, getErrorField
+} = purchaseSlice.actions
 export default purchaseSlice.reducer

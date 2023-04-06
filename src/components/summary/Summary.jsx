@@ -45,7 +45,7 @@ export default function Summary({userPlan}) {
               </div>
 
               <div className='total py-8 px-12 w-full min-h-fit flex items-center justify-between'>
-                <p className='text-xl text-gray-400'>Larger storage</p>
+                <p className='text-xl text-gray-400'>Total</p>
                 <span className='total_price font-semibold'>+$2/mo</span>
               </div>
 

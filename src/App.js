@@ -9,7 +9,7 @@ import Summary from './components/summary/Summary';
 import ThankYou from './components/thankYou/ThankYou';
 import { useSelector } from 'react-redux';
 function App() {
-  const step = useSelector((state) => state.formStep.step)
+  const step = useSelector((state) => state.subscriptionData.step)
   return (
     <div className="
       container max-w-full h-screen flex items-center justify-center
@@ -32,5 +32,3 @@ function App() {
 }
 
 export default App;
-//bg-cyan-100'
-//<YourInfo/>

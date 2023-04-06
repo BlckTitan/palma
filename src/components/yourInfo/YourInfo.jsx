@@ -1,17 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './style/yourInfo_style.css';
 import { useDispatch } from 'react-redux';
-import { nextStep } from '../../app/purchaseSlice/purchaseSlice';
+import { nextStep, getPersonalInfo, getErrorMessage, getErrorField} from '../../app/purchaseSlice/purchaseSlice';
+import { useSelector } from 'react-redux';
 
 export default function YourInfo() {
-    const dispatch = useDispatch()
-    
-    const personal_info_inputs = [
-        {labels: 'name', title: 'Name', input_type: 'text', dummy_text: 'Ugorji Victor'},
-        {labels: 'email', title: 'Email Address', input_type: 'email', dummy_text: 'email@email.com'},
-        {labels: 'phone', title: 'Phone Number', input_type: 'tel', dummy_text: 'e.g. +234 813 000 0039'},
-      ]
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
+    const data = useSelector((state) => state.subscriptionData);
+    let emptyField = ''
 
+    const dispatch = useDispatch();
+    
+    const validateInput = () =>{
+      switch (emptyField) {
+        case name:
+              dispatch(getErrorField('name'));
+              dispatch(getErrorMessage('This field is required'))
+          break;
+        case email:
+          dispatch(getErrorField('email'));
+            dispatch(getErrorMessage('This field is required'))
+        break;
+      case phone:
+        dispatch(getErrorField('phone'));
+          dispatch(getErrorMessage('This field is required'))
+      break;
+        default: 
+        
+        dispatch(nextStep())
+          break;
+      }
+    }
+    
+    useEffect(()=>{
+      dispatch(getPersonalInfo([name, email, phone]))
+    }, [name, email, phone])
+    
+    console.log(data?.personalInfo, name, email, phone, data?.errorField, data?.errorMessage)
   return (
     <div className='yourInfo_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
@@ -23,37 +50,86 @@ export default function YourInfo() {
             </header>
 
             <div className='field_label_inputs'>
-              {
-                personal_info_inputs.map((inputs, index) => (
-                  <div className='input_items mb-6' key={index}>
+                  <div className='input_items mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
-                      <label for={inputs.labels} className='text-xl font-normal mb-2'>
-                        {inputs.title}
+                      <label for='name' className='text-xl font-normal mb-2'>
+                        Name
                       </label>
-                      <span className='error_message text-red-500 font-normal text-2xl'></span>
+                      <span className='error_message text-red-500 font-normal text-2xl'>
+                        {(data?.errorMessage !== '' && data?.errorField === 'name') ?
+                         data?.errorMessage : ''}
+                      </span>
                     </div>
 
                     <input 
                       className='w-full h-14 text-xl rounded-md'
-                      id={inputs.labels} 
-                      type={inputs.input_type} 
-                      placeholder={inputs.dummy_text}
+                      id='name' 
+                      type='text '
+                      placeholder='Ugorji Victor'
                       required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
 
                   </div> 
-                ))
-              }
-            </div>
+
+                  <div className='input_items mb-6'>
+
+                    <div className='label_error flex justify-between items-center'>
+                      <label for='email' className='text-xl font-normal mb-2'>
+                        Email Address
+                      </label>
+                      <span className='error_message text-red-500 font-normal text-2xl'>
+                        {(data?.errorMessage !== '' && data?.errorField === 'email') ?
+                         data?.errorMessage : ''}
+                      </span>
+                    </div>
+
+                    <input 
+                      className='w-full h-14 text-xl rounded-md'
+                      id='email' 
+                      type='email'
+                      placeholder='email@email.com'
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                  </div> 
+                  
+                  <div className='input_items mb-6'>
+
+                  <div className='label_error flex justify-between items-center'>
+                    <label for='phone' className='text-xl font-normal mb-2'>
+                      Phone Number
+                    </label>
+                    <span className='error_message text-red-500 font-normal text-2xl'>
+                      {(data?.errorMessage !== '' && data?.errorField === 'phone') ?
+                       data?.errorMessage : ''}
+                    </span>
+                  </div>
+
+                  <input 
+                    className='w-full h-14 text-xl rounded-md'
+                    id='phone'
+                    type='tel' 
+                    placeholder='e.g. +2348134484139'
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+
+                  </div> 
           </div>
 
           <footer className='w-full h-1/6 form_container flex justify-between items-end'>
             <button></button>
             <button 
               className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'
-              onClick={() => dispatch(nextStep())}>Next Step</button>
+              onClick={() => validateInput()}>Next Step</button>
           </footer>
+      </div>
     </div>
   )
 }

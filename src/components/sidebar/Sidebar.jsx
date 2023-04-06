@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 export default function Sidebar() {
-    const step = useSelector((state) => state.formStep.step)
+    const step = useSelector((state) => state.subscriptionData.step)
 
     const sidebar_items = [
         {step_count: 1, step: 'STEP 1', step_title: 'YOUR INFO'},

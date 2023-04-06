@@ -3,7 +3,7 @@ import purchaseReducer from './purchaseSlice/purchaseSlice'
 
 const store = configureStore({
   reducer: {
-    formStep: purchaseReducer,
+    subscriptionData: purchaseReducer,
   },
 });
 export default  store;
