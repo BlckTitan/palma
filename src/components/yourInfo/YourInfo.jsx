@@ -13,7 +13,8 @@ export default function YourInfo() {
 
     const dispatch = useDispatch();
     
-    const validateInput = () =>{
+    const validateInput = (e) =>{
+      e.preventDefault()
       switch (emptyField) {
         case name:
               dispatch(getErrorField('name'));
@@ -125,7 +126,7 @@ export default function YourInfo() {
             <button></button>
             <button 
               className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'
-              onClick={() => validateInput()}>Next Step</button>
+              onClick={(e) => validateInput(e)}>Next Step</button>
           </footer>
       </div>
     </div>
