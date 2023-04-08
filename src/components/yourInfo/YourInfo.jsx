@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './style/yourInfo_style.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { nextStep, getPersonalInfo, getErrorMessage, getErrorField} from '../../app/purchaseSlice/purchaseSlice';
-import { useSelector } from 'react-redux';
 
 export default function YourInfo() {
     const [name, setName] = useState('');
