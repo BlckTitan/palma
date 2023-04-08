@@ -56,8 +56,6 @@ export default function AddOns() {
     dispatch(getAddOns([service, storage, customProfile]))
   }, [service, storage, customProfile])
     
-    console.log(data?.addOns,)
-
   return (
     <div className='addOns_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
