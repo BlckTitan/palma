@@ -147,15 +147,3 @@ export default function AddOns() {
     </div>
   )
 }
-/**const monthly_addOns = [
-      {title: 'Online service', description: 'Access to multiplayer games', price_label_month: '$1/mo', price_month: 1,},
-      {title: 'Larger storage',  description: 'Extra 1TB of cloud save', price_label_month: '$2/mo', price_month: 2},
-      {title: 'Customizable profile', description: 'Custom theme on your profile', price_label_month: '$2/mo', price_month: 2},
-    ];
-
-    const yearly_addOns = [
-      {title: 'Online service', price_label_year: '+$10/yr', price_year: 10, description: 'Access to multiplayer games'},
-      {title: 'Larger storage', price_label_year: '+$20/yr', price_year: 20, description: 'Extra 1TB of cloud save'},
-      {title: 'Customizable profile', price_label_year: '+$20/yr', price_year: 20, description: 'Custom theme on your profile'},
-    ]
- */
