@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style/thankYou_style.css';
 import icon_thankYou from '../../assets/images/icon-thank-you.svg';
 
 export default function ThankYou() {
-    
-
+    useEffect(()=>{
+      setTimeout(()=>{
+        window.location = '/'
+      }, 5000)
+    }, [])
   return (
     <div className='thankYou_container w-full h-full flex flex-col items-center justify-center text-blue-950'>
       <header className='flex flex-col items-center justify-center'>
