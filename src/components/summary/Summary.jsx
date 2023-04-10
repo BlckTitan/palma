@@ -1,10 +1,20 @@
 import React from 'react';
 import './style/summary_style.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { changeStep, nextStep, prevStep } from '../../app/purchaseSlice/purchaseSlice';
-export default function Summary({userPlan}) {
+export default function Summary() {
+  
+    const data = useSelector((state) => state.subscriptionData)
     const dispatch = useDispatch();
+    let totalAddOns = 0;
+    const generateTotal = () =>{
+      totalAddOns = totalAddOns += (((data?.addOns[0]?.length=== 0) ? 0 : data?.addOns[0]?.cost) + 
+      ((data?.addOns[1]?.length === 0) ? 0 : data?.addOns[1]?.cost) + 
+      ((data?.addOns[2]?.length === 0) ? 0 : data?.addOns[2]?.cost));
 
+      return data.plan[1] + totalAddOns
+    }
+    console.log(data?.addOns, totalAddOns)
   return (
     <div className='summary_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
@@ -20,8 +30,10 @@ export default function Summary({userPlan}) {
               <div className='purchaseSummary bg-gray-50 rounded-lg px-12'>
                 <header className='py-8 border-solid border-b-2'>
                   <div className='title_price flex items-center justify-between'>
-                    <h3 className='text-2xl font-semibold text-blue-950'>Arcade(monthly)</h3>
-                    <span className='text-2xl font-semibold text-blue-950'>$9/mo</span>
+                    <h3 className='text-2xl font-semibold text-blue-950'>{data?.plan[0]}</h3>
+                    <span className='text-2xl font-semibold text-blue-950'>
+                      {(data?.plan[2] === true) ? `${data?.plan[1]}/mo` : `${data?.plan[1]}/yr`}
+                    </span>
                   </div>
                   <button 
                     className='btn_change text-xl text-gray-400 underline'
@@ -30,23 +42,27 @@ export default function Summary({userPlan}) {
                 </header>
 
                 <div className='addOns py-8'>
-
-                  <div className='addOn_item flex items-center justify-between mb-4'>
-                    <p className='text-xl text-gray-400 '>Online service</p>
-                    <span className='text-xl font-normal text-blue-950'>+$1/mo</span>
-                  </div>
-
-                  <div className='addOn_item flex items-center justify-between'>
-                    <p className='text-xl text-gray-400'>Larger storage</p>
-                    <span className='text-xl font-normal text-blue-950'>+$2/mo</span>
-                  </div>
+                  {data?.addOns.map((purchase_addOns, index) => (
+                    <div className='addOn_item flex items-center justify-between mb-4' key={index}>
+                          <p className='text-xl text-gray-400 '>
+                            {purchase_addOns.title}
+                          </p>
+                          <span className='text-xl font-normal text-blue-950'>
+                            {
+                              purchase_addOns.price_label
+                            }
+                          </span>
+                    </div>))
+                  }
 
                 </div>
               </div>
 
               <div className='total py-8 px-12 w-full min-h-fit flex items-center justify-between'>
                 <p className='text-xl text-gray-400'>Total</p>
-                <span className='total_price font-semibold'>+$2/mo</span>
+                <span className='total_price font-semibold'>
+                  ${generateTotal()}
+                </span>
               </div>
 
             </div>

@@ -15,8 +15,8 @@ export default function AddOns() {
         case 'service':
           if(e.target.checked){
             setService((data?.plan[2] === true) ? 
-              {title: 'Online service', price_label_month: '$1/mo', price_month: 1} :
-              {title: 'Online service', price_label_year: '+$10/yr', price_year: 10}
+              {title: 'Online service', price_label: '$1/mo', cost: 1, duration: 'month'} :
+              {title: 'Online service', price_label: '+$10/yr', cost: 10, duration: 'year'}
             )
           }else{
             setService([])
@@ -26,8 +26,8 @@ export default function AddOns() {
         case 'storage':
           if(e.target.checked){
             setStorage((data?.plan[2] === true) ? 
-              {title: 'Larger storage', price_label_month: '$2/mo', price_month: 2} :
-              {title: 'Larger storage', price_label_year: '+$20/yr', price_year: 20}
+              {title: 'Larger storage', price_label: '$2/mo', cost: 2, duration: 'month'} :
+              {title: 'Larger storage', price_label: '+$20/yr', cost: 20, duration: 'year'}
             )
           }else{
             setStorage([])
@@ -37,8 +37,8 @@ export default function AddOns() {
         case 'profile':
           if(e.target.checked){
             setCustomProfile((data?.plan[2] === true) ? 
-              {title: 'Customizable profile', price_label_month: '$2/mo', price_month: 2} :
-              {title: 'Customizable profile', price_label_year: '+$20/yr', price_year: 20}
+              {title: 'Customizable profile', price_label: '$2/mo', cost: 2, duration: 'month'} :
+              {title: 'Customizable profile', price_label: '+$20/yr', cost: 20, duration: 'year'}
             )
           }else{
             setCustomProfile([])
