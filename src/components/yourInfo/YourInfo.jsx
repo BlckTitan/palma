@@ -16,24 +16,30 @@ export default function YourInfo() {
       e.preventDefault()
       switch (emptyField) {
         case name:
-              dispatch(getErrorField('name'));
-              dispatch(getErrorMessage('This field is required'))
-          break;
+          dispatch(getErrorField('name'));
+          dispatch(getErrorMessage('This field is required'))
+          clearErrorMessage()
+        break;
         case email:
           dispatch(getErrorField('email'));
-            dispatch(getErrorMessage('This field is required'))
+          dispatch(getErrorMessage('This field is required'));
+          clearErrorMessage()
         break;
-      case phone:
-        dispatch(getErrorField('phone'));
-          dispatch(getErrorMessage('This field is required'))
-      break;
+        case phone:
+          dispatch(getErrorField('phone'));
+          dispatch(getErrorMessage('This field is required'));
+          clearErrorMessage()
+        break;
         default: 
-        
-        dispatch(nextStep())
-          break;
+          dispatch(nextStep())
+        break;
       }
     }
-    
+    const clearErrorMessage = () => {
+      setTimeout(()=>{
+        dispatch(getErrorMessage(''))
+      }, 5000)
+    }
     useEffect(()=>{
       dispatch(getPersonalInfo([name, email, phone]))
     }, [name, email, phone])

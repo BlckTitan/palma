@@ -12,22 +12,27 @@ export default function Plan() {
     const [monthlyDuration, setMonthlyDuration] = useState(true);
     const [planCost, setPlanCost] = useState('');
     const [planName, setPlanName] = useState('');
+
     const data = useSelector((state) => state.subscriptionData)
 
     const dispatch = useDispatch()
 
     const monthly_plan = [
-        {icon: <img src={icon_arcade} alt=''/>, title: 'Arcade', price_label_month: '$9/mo', price_month: 9,},
-        {icon: <img src={icon_advanced} alt=''/>, title: 'Advanced', price_label_month: '$12/mo', price_month: 12},
-        {icon: <img src={icon_pro} alt=''/>, title: 'Pro', price_label_month: '$15/mo', price_month: 15},
+      {icon: <img src={icon_arcade} alt=''/>, title: 'Arcade', price_label_month: '$9/mo', price_month: 9,},
+      {icon: <img src={icon_advanced} alt=''/>, title: 'Advanced', price_label_month: '$12/mo', price_month: 12},
+      {icon: <img src={icon_pro} alt=''/>, title: 'Pro', price_label_month: '$15/mo', price_month: 15},
     ]
 
     const yearly_plan = [
       {icon: <img src={icon_arcade} alt=''/>, title: 'Arcade', price_label_year: '$90/yr', price_year: 90, free: '2 months free'},
       {icon: <img src={icon_advanced} alt=''/>, title: 'Advanced', price_label_year: '$120/yr', price_year: 120, free: '2 months free'},
       {icon: <img src={icon_pro} alt=''/>, title: 'Pro', price_label_year: '$150/yr', price_year: 150, free: '2 months free'},
-  ]
-
+    ]
+    const clearErrorMessage = () => {
+      setTimeout(()=>{
+        dispatch(getErrorMessage(''))
+      }, 5000)
+    }
     useEffect(()=>{
       dispatch(getPlan([planName, planCost, monthlyDuration]))
     }, [monthlyDuration, planName, planCost])
@@ -39,15 +44,19 @@ export default function Plan() {
       switch (planCost) {
         case emptyField:
           dispatch(getErrorMessage('No monthly plan selected'))
+          clearErrorMessage()
         return false
         case 90:
           dispatch(getErrorMessage('No monthly plan selected'))
+          clearErrorMessage()
         return false
         case 120:
           dispatch(getErrorMessage('No monthly plan selected'))
+          clearErrorMessage()
         return false
         case 150:
           dispatch(getErrorMessage('No monthly plan selected'))
+          clearErrorMessage()
         return false
         default: 
           dispatch(nextStep())
@@ -61,16 +70,20 @@ export default function Plan() {
       let emptyField = '';
       switch (planCost) {
         case emptyField:
-          dispatch(getErrorMessage('No monthly plan selected'))
+          dispatch(getErrorMessage('No yearly plan selected'))
+          clearErrorMessage()
         return false
         case 9:
-          dispatch(getErrorMessage('No monthly plan selected'))
+          dispatch(getErrorMessage('No yearly plan selected'))
+          clearErrorMessage()
         return false
         case 12:
-          dispatch(getErrorMessage('No monthly plan selected'))
+          dispatch(getErrorMessage('No yearly plan selected'))
+          clearErrorMessage()
         return false
         case 15:
-          dispatch(getErrorMessage('No monthly plan selected'))
+          dispatch(getErrorMessage('No yearly plan selected'))
+          clearErrorMessage()
         return false
         default: 
           dispatch(nextStep())
@@ -81,16 +94,18 @@ export default function Plan() {
   return (
     <div className='plan_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
-            <header>
+            <header className='mb-4'>
               <h1 className='text-5xl font-bold'>Select your plan</h1>
-              <p className='text-xl text-gray-400 mt-4 mb-14'>
+              <p className='text-xl text-gray-400 mt-4'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
-              <span className='error_message text-red-500 font-normal text-2xl'>
-                {(data?.errorMessage !== '') && data?.errorMessage}
-              </span>
-            <div className='planCards flex flex-wrap items-center justify-between'>
+
+            <span className='error_message text-red-500 font-normal text-2xl inline-block'>
+              {(data?.errorMessage !== '') && data?.errorMessage}
+            </span>
+
+            <div className='planCards flex flex-wrap items-center justify-between mt-4'>
               {(monthlyDuration === true) && monthly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
                   className='selectable_cards block relative w-52 h-60 cursor-pointer' 
