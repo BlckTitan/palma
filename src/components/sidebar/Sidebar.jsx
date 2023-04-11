@@ -12,22 +12,22 @@ export default function Sidebar() {
     ]
   return (
     <>
-        <ul className='mt-8 h-64'>
+        <ul className='mt-8 mb-16 xl:mb-0 h-24 xl:h-64 flex flex-row justify-center xl:items-start xl:flex-col relative xl:static'>
 
         {
             sidebar_items.map((item, index) => (
-                <li className='flex items-center w-full h-16 mt-4 pl-14 text-white' key={index}>
-                <div 
-                    className={ (step === item.step_count) ? 
-                    'step_count flex justify-center items-center mr-6 text-2xl w-12 h-12 rounded-full bg-cyan-100 text-blue-950' : 
-                    'step_count flex justify-center items-center mr-6 text-2xl w-12 h-12 rounded-full border-cyan-100 border-2 border-solid'}
-                >
-                    <span>{item.step_count}</span>
-                </div>
-                <div className='step_title'>
-                    <span className='step text-slate-300'>{item.step}</span>
-                    <h2 className='step_title text-xl font-bold'>{item.step_title}</h2>
-                </div>
+                <li className='flex flex-col xl:flex-row items-center w-8 xl:w-full mr-5 xl:mr-0 h-8 xl:h-16 mt-4 xl:pl-14 text-white  lg:static' key={index}>
+                    <div 
+                        className={ (step === item.step_count) ? 
+                        'step_count flex justify-center items-center  xl:mr-6 text-2xl w-8 xl:w-12 h-8 xl:h-12 rounded-full bg-cyan-100 text-blue-950' : 
+                        'step_count flex justify-center items-center xl:mr-6 text-2xl w-8 xl:w-12 h-8 xl:h-12 rounded-full border-cyan-100 border xl:border-2 border-solid'}
+                    >
+                        <span>{item.step_count}</span>
+                    </div>
+                    <div className='step_title  hidden xl:inline-block'>
+                        <span className='step text-slate-300'>{item.step}</span>
+                        <h2 className='step_title text-xl font-bold'>{item.step_title}</h2>
+                    </div>
                 </li>
             ))
         }
