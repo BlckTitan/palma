@@ -32,13 +32,25 @@ form{
     color: --marine-blue;
 }
 div.sidebar{
-    background-image: url('../assets/images/bg-sidebar-desktop.svg');
+    background-image: url('../assets/images/bg-sidebar-mobile.svg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     flex: 3;
-    height: 100%;
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 div.form_component{
     flex: 10;
+}
+@media screen and (min-width: 1024px) {
+    div.sidebar{
+        background-image: url('../assets/images/bg-sidebar-desktop.svg');
+        position: static;
+        height: 100%;
+        z-index: 0;
+    }
 }

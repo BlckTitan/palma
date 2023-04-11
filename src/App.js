@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="
       container max-w-full h-screen flex items-center justify-center
-      bg-cyan-50 p-8 App
+      bg-cyan-50 p-8 App relative
     ">
-      <form className='bg-white w-8/12 h-4/6 rounded-2xl shadow-lg flex items-center'>
+      <form className='lg:bg-white w-11/12 lg:w-8/12 h-5/6 lg:h-4/6 rounded-2xl lg:shadow-lg flex flex-col lg:flex-row lg:items-center'>
         <div className="sidebar">
           <Sidebar/>
         </div>
-        <div className='form_component w-full h-full  text-blue-950'>
+        <div className='form_component w-full h-full z-10 lg:z-0 bg-white lg:bg-inherit rounded-2xl lg:rounded-2xl shadow-lg lg:shadow-none text-blue-950'>
           {(step === 1) && <YourInfo/>}
           {(step === 2) && <Plan/>}
           {(step === 3) && <AddOns/>}
