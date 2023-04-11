@@ -28,7 +28,7 @@ Colors
 
 }
 form{
-    padding: 1.5rem;
+    padding: 0 1rem;
     color: --marine-blue;
 }
 div.sidebar{
@@ -38,19 +38,27 @@ div.sidebar{
     background-size: cover;
     flex: 3;
     width: 100%;
-    height: fit-content;
+    height: 11rem;
     position: absolute;
     top: 0;
     left: 0;
 }
 div.form_component{
     flex: 10;
+    /*width: fit-content;*/
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
+    form{
+        padding: 1.5rem;
+        color: --marine-blue;
+    }
     div.sidebar{
         background-image: url('../assets/images/bg-sidebar-desktop.svg');
         position: static;
         height: 100%;
         z-index: 0;
+    }
+    div.form_component{
+        flex: 10;
     }
 }

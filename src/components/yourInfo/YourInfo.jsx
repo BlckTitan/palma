@@ -47,8 +47,8 @@ export default function YourInfo() {
     <div className='yourInfo_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
             <header>
-              <h1 className='text-5xl font-bold'>Personal info</h1>
-              <p className='text-xl text-gray-400 mt-4 mb-14'>
+              <h1 className='text-3xl xl:text-5xl font-bold'>Personal info</h1>
+              <p className='text-lg xl:text-xl text-gray-400 mt-4 mb-14'>
                 Please provide your name, email address, and phone number.
               </p>
             </header>
