@@ -1,18 +1,18 @@
 div.yourInfo_container{
     position: relative;
-    padding: 4rem 10rem 1rem 10rem;
+    padding: 2rem 1.5rem;
 }
 div.field_label_inputs input:active,
 div.field_label_inputs input:focus,
 div.field_label_inputs input:focus-within{
-    border: 2px solid --purplish-blue;
+    border: 1px solid --purplish-blue;
 }
 div.field_label_inputs input.error{
-    border: 2px solid #ef4444;
+    border: 1px solid #ef4444;
 }
 div.field_label_inputs input{
-    border: 2px solid #9ca3af;
-    padding: 1rem;
+    border: 1px solid #9ca3af;
+    padding:  0.5rem 0.7rem;
 }
 footer > button.btn_back{
     color: var(--dark-blue);
@@ -20,4 +20,22 @@ footer > button.btn_back{
 footer > button.btn_next{
     background-color: var(--dark-blue);
     color: #fff;
+}
+@media screen and (min-width: 1280px) {
+    div.yourInfo_container{
+        position: relative;
+        padding: 4rem 10rem 1rem 10rem;
+    }
+    div.field_label_inputs input:active,
+    div.field_label_inputs input:focus,
+    div.field_label_inputs input:focus-within{
+        border: 2px solid --purplish-blue;
+    }
+    div.field_label_inputs input.error{
+        border: 2px solid #ef4444;
+    }
+    div.field_label_inputs input{
+        border: 2px solid #9ca3af;
+        padding: 1rem;
+    }
 }

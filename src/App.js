@@ -19,7 +19,7 @@ function App() {
         <div className="sidebar">
           <Sidebar/>
         </div>
-        <div className='form_component w-full h-full mt-12 xl:mt-0 z-10 xl:z-0 bg-white xl:bg-inherit rounded-2xl xl:rounded-2xl shadow-lg xl:shadow-none text-blue-950'>
+        <div className='form_component w-full h-full mt-12 xl:mt-0 z-10 xl:z-0 bg-white xl:bg-inherit rounded-xl xl:rounded-2xl shadow-lg xl:shadow-none text-blue-950'>
           {(step === 1) && <YourInfo/>}
           {(step === 2) && <Plan/>}
           {(step === 3) && <AddOns/>}
