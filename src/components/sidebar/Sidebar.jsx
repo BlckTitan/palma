@@ -12,7 +12,7 @@ export default function Sidebar() {
     ]
   return (
     <>
-        <ul className='mt-8 mb-16 xl:mb-0 h-24 xl:h-64 flex flex-row justify-center xl:items-start xl:flex-col relative xl:static'>
+        <ul className='mt-4 xl:mt-8 mb-16 xl:mb-0 h-24 xl:h-64 flex flex-row justify-center xl:items-start xl:flex-col relative xl:static'>
 
         {
             sidebar_items.map((item, index) => (

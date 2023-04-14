@@ -40,21 +40,23 @@ export default function YourInfo() {
         dispatch(getErrorMessage(''))
       }, 5000)
     }
+
     useEffect(()=>{
       dispatch(getPersonalInfo([name, email, phone]))
-    }, [name, email, phone])
+    }, [name, email, phone]);
+
   return (
     <div className='yourInfo_container w-full h-fit  text-blue-950'>
-        <div className='w-full h-5/6'>
+        <div className='w-full h-4/6'>
             <header>
               <h1 className='text-3xl xl:text-5xl font-bold'>Personal info</h1>
-              <p className='text-lg xl:text-xl text-gray-400 mt-4 mb-4 xl:mb-14'>
+              <p className='text-base xl:text-xl text-gray-400 mt-3 mb-3 xl:mb-14'>
                 Please provide your name, email address, and phone number.
               </p>
             </header>
 
             <div className='field_label_inputs'>
-                  <div className='input_items mb-6'>
+                  <div className='input_items mb-2 xl:mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
                       <label htmlFor='name' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
@@ -81,7 +83,7 @@ export default function YourInfo() {
 
                   </div> 
 
-                  <div className='input_items mb-6'>
+                  <div className='input_items mb-2 xl:mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
                       <label htmlFor='email' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
@@ -108,7 +110,7 @@ export default function YourInfo() {
 
                   </div> 
                   
-                  <div className='input_items mb-6'>
+                  <div className='input_items mb-2 xl:mb-6'>
 
                   <div className='label_error flex justify-between items-center'>
                     <label htmlFor='phone' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
@@ -136,7 +138,9 @@ export default function YourInfo() {
                   </div> 
           </div>
 
-          <footer className='w-full h-20 xl:h-1/6 mt-8 bg-white xl-bg:inherit xl:mt-0 yourInfo_footer flex justify-between items-center xl:items-end absolute left-0 bottom-0 xl:static'>
+          <footer className='yourInfo_footer w-full h-20 xl:h-1/6 bg-white xl-bg:inherit xl:mt-0 p-4 xl:p-0
+                            flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static'
+          >
             <button></button>
             <button 
               className='btn_next w-28 xl:w-32 h-12 xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md xl:rounded-xl'

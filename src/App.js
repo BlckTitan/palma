@@ -11,15 +11,24 @@ import { useSelector } from 'react-redux';
 function App() {
   const step = useSelector((state) => state.subscriptionData.step)
   return (
-    <div className="
-      container max-w-full h-screen flex items-center justify-center
-      bg-cyan-50 p-0 xl:p-8 App relative
+    <div 
+      className="container max-w-full xl:h-screen flex xl:items-center 
+      justify-center bg-cyan-50 p-0 xl:p-8 App relative
     ">
-      <form className='xl:bg-white w-full xl:w-8/12 h-5/6 xl:h-4/6 rounded-2xl xl:shadow-lg flex flex-col xl:flex-row items-center xl:items-center'>
+      <form 
+        className='xl:bg-white w-full xl:w-8/12 h-fit xl:h-4/6 rounded-2xl xl:shadow-lg 
+        flex flex-col xl:flex-row items-center xl:items-center mt-20 xl:mt-0'
+      >
+        
         <div className="sidebar">
           <Sidebar/>
         </div>
-        <div className='form_component w-full h-full mt-12 xl:mt-0 z-10 xl:z-0 bg-white xl:bg-inherit rounded-xl xl:rounded-2xl shadow-lg xl:shadow-none text-blue-950'>
+
+        <div 
+          className='form_component w-full h-full xl:h-full 
+          mt-1 xl:mt-0 z-10 xl:z-0 bg-white xl:bg-inherit 
+          rounded-xl xl:rounded-2xl shadow-lg xl:shadow-none text-blue-950'
+        >
           {(step === 1) && <YourInfo/>}
           {(step === 2) && <Plan/>}
           {(step === 3) && <AddOns/>}

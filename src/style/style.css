@@ -27,6 +27,9 @@ Colors
 --White: hsl(0, 0%, 100%);
 
 }
+div.container{
+    height: 100vh;
+}
 form{
     padding: 0 1rem;
     color: --marine-blue;
@@ -45,9 +48,12 @@ div.sidebar{
 }
 div.form_component{
     flex: 10;
-    /*width: fit-content;*/
 }
 @media screen and (min-width: 1280px) {
+    
+    div.container{
+        height: 100vh;
+    }
     form{
         padding: 1.5rem;
         color: --marine-blue;
