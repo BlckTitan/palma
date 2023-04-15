@@ -93,22 +93,23 @@ export default function Plan() {
 
   return (
     <div className='plan_container w-full h-full  text-blue-950'>
-        <div className='w-full h-5/6'>
-            <header className='mb-4'>
-              <h1 className='text-5xl font-bold'>Select your plan</h1>
-              <p className='text-xl text-gray-400 mt-4'>
+        <div className='w-full 2xl:h-5/6'>
+            <header className='mb-2 xl:mb-4'>
+              <h1 className='text-3xl xl:text-4xl 2xl:text-5xl font-bold'>Select your plan</h1>
+              <p className='text-xl text-gray-400 mt-2 2xl:mt-4'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
 
-            <span className='error_message text-red-500 font-normal text-2xl inline-block'>
+            <span className='error_message text-red-500 font-normal text-xl xl:text-2xl inline-block'>
               {(data?.errorMessage !== '') && data?.errorMessage}
             </span>
 
-            <div className='planCards flex flex-wrap items-center justify-between mt-4'>
+            <div className='planCards flex flex-wrap items-center justify-between mt-2 xl:mt-4'>
               {(monthlyDuration === true) && monthly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
-                  className='selectable_cards block relative w-52 h-60 cursor-pointer' 
+                  className='selectable_cards block relative w-full xl:w-52 h-20 
+                  xl:h-60 cursor-pointer mb-4 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -119,7 +120,7 @@ export default function Plan() {
                     className='plan hidden'
                   />
                   <div className='card_details 
-                            flex flex-col
+                            flex flex-row xl:flex-col
                             w-full h-full 
                             rounded-lg 
                             border border-solid border-gray-300
@@ -136,7 +137,8 @@ export default function Plan() {
 
               {(monthlyDuration === false) && yearly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
-                  className='selectable_cards block relative w-52 h-60 cursor-pointer' 
+                  className='selectable_cards block relative  w-full xl:w-52 h-20 xl:h-60 
+                  cursor-pointer mb-4 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -146,7 +148,7 @@ export default function Plan() {
                     }} 
                     className='plan hidden'/>
                   <div className='card_details 
-                            flex flex-col
+                            flex flex-row xl:flex-col
                             w-full h-full 
                             rounded-lg 
                             border border-solid border-gray-300

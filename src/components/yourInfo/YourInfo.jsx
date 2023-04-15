@@ -47,16 +47,16 @@ export default function YourInfo() {
 
   return (
     <div className='yourInfo_container w-full h-fit  text-blue-950'>
-        <div className='w-full h-4/6'>
+        <div className='w-full h-4/6 lg:h-5/6'>
             <header>
-              <h1 className='text-3xl xl:text-5xl font-bold'>Personal info</h1>
-              <p className='text-base xl:text-xl text-gray-400 mt-3 mb-3 xl:mb-14'>
+              <h1 className='text-3xl 2xl:text-5xl font-bold'>Personal info</h1>
+              <p className='text-base lg:text-lg xl:text-xl text-gray-400 mt-3 mb-3 xl:mb-4 2xl:mb-14'>
                 Please provide your name, email address, and phone number.
               </p>
             </header>
 
             <div className='field_label_inputs'>
-                  <div className='input_items mb-2 xl:mb-6'>
+                  <div className='input_items mb-2 lg:mb-4 2xl:mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
                       <label htmlFor='name' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
@@ -70,8 +70,8 @@ export default function YourInfo() {
 
                     <input 
                       className={((data?.errorMessage !== '' && data?.errorField === 'name')) ? 
-                      'w-full h-10 xl:h-14 text-lg xl:text-xl rounded-md border-2 border-solid border-red-500' :
-                      'w-full h-10 xl:h-14 text-lg xl:text-xl rounded-md'
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
                       }
                       id='name' 
                       type='text '
@@ -83,7 +83,7 @@ export default function YourInfo() {
 
                   </div> 
 
-                  <div className='input_items mb-2 xl:mb-6'>
+                  <div className='input_items mb-2 lg:mb-4 2xl:mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
                       <label htmlFor='email' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
@@ -97,8 +97,8 @@ export default function YourInfo() {
 
                     <input 
                       className={((data?.errorMessage !== '' && data?.errorField === 'email')) ? 
-                      'w-full h-10 xl:h-14 text-lg xl:text-xl rounded-md border-2 border-solid border-red-500' :
-                      'w-full h-10 xl:h-14 text-lg xl:text-xl rounded-md'
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
                       }
                       id='email' 
                       type='email'
@@ -110,7 +110,7 @@ export default function YourInfo() {
 
                   </div> 
                   
-                  <div className='input_items mb-2 xl:mb-6'>
+                  <div className='input_items mb-2 lg:mb-4 2xl:mb-6'>
 
                   <div className='label_error flex justify-between items-center'>
                     <label htmlFor='phone' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
@@ -124,8 +124,8 @@ export default function YourInfo() {
 
                   <input 
                     className={((data?.errorMessage !== '' && data?.errorField === 'phone')) ? 
-                    'w-full h-10 xl:h-14 text-lg xl:text-xl rounded-md border-2 border-solid border-red-500' :
-                    'w-full h-10 xl:h-14 text-lg xl:text-xl rounded-md'
+                    'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                    'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
                     }
                     id='phone'
                     type='tel' 
@@ -138,12 +138,12 @@ export default function YourInfo() {
                   </div> 
           </div>
 
-          <footer className='yourInfo_footer w-full h-20 xl:h-1/6 bg-white xl-bg:inherit xl:mt-0 p-4 xl:p-0
+          <footer className='yourInfo_footer w-full h-20 xl:h-1/6 bg-white xl:bg-inherit xl:mt-0 p-4 xl:p-0
                             flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static'
           >
             <button></button>
             <button 
-              className='btn_next w-28 xl:w-32 h-12 xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md xl:rounded-xl'
+              className='btn_next w-28 xl:w-32 h-12 xl:h-14 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl'
               onClick={(e) => validateInput(e)}>Next Step</button>
           </footer>
       </div>

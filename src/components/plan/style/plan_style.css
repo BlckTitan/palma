@@ -1,6 +1,6 @@
 div.plan_container{
     position: relative;
-    padding: 4rem 10rem 1rem 10rem;
+    padding: 2rem 1rem 1rem 1rem;
 }
 div.planCards > label.selectable_cards > input.plan:checked ~ div.card_details{
     border: 1px solid var(--marine-blue);
@@ -34,4 +34,11 @@ footer > button.btn_back{
 footer > button.btn_next{
     background-color: var(--dark-blue);
     color: #fff;
+}
+
+@media screen and (min-width: 1280px) {
+   div.plan_container{
+    position: relative;
+    padding: 4rem 1rem 1rem 1rem;
+    }
 }

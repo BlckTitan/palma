@@ -7,7 +7,9 @@ import Plan from './components/plan/Plan';
 import AddOns from './components/addOns/AddOns';
 import Summary from './components/summary/Summary';
 import ThankYou from './components/thankYou/ThankYou';
+
 import { useSelector } from 'react-redux';
+
 function App() {
   const step = useSelector((state) => state.subscriptionData.step)
   return (
@@ -16,7 +18,7 @@ function App() {
       justify-center bg-cyan-50 p-0 xl:p-8 App relative
     ">
       <form 
-        className='xl:bg-white w-full xl:w-8/12 h-fit xl:h-4/6 rounded-2xl xl:shadow-lg 
+        className='xl:bg-white w-full md:w-10/12 lg:w-9/12 xl:w-10/12 2xl:w-8/12 h-fit xl:h-fit 2xl:h-4/6 rounded-2xl xl:shadow-lg 
         flex flex-col xl:flex-row items-center xl:items-center mt-20 xl:mt-0'
       >
         

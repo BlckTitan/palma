@@ -60,7 +60,11 @@ div.form_component{
     }
     div.sidebar{
         background-image: url('../assets/images/bg-sidebar-desktop.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         position: static;
+        width: 100%;
         height: 100%;
         z-index: 0;
     }

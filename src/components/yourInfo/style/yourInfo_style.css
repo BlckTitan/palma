@@ -23,7 +23,7 @@ footer > button.btn_next{
 @media screen and (min-width: 1280px) {
     div.yourInfo_container{
         position: relative;
-        padding: 4rem 10rem 1rem 10rem;
+        padding: 1rem 5rem 1rem 5rem;
     }
     div.field_label_inputs input:active,
     div.field_label_inputs input:focus,
@@ -36,5 +36,11 @@ footer > button.btn_next{
     div.field_label_inputs input{
         border: 2px solid #9ca3af;
         padding: 1rem;
+    }
+}
+@media screen and (min-width: 1536px) {
+    div.yourInfo_container{
+        position: relative;
+        padding: 4rem 10rem 1rem 10rem;
     }
 }
