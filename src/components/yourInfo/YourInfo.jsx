@@ -40,34 +40,39 @@ export default function YourInfo() {
         dispatch(getErrorMessage(''))
       }, 5000)
     }
+
     useEffect(()=>{
       dispatch(getPersonalInfo([name, email, phone]))
-    }, [name, email, phone])
+    }, [name, email, phone]);
+
   return (
-    <div className='yourInfo_container w-full h-full  text-blue-950'>
-        <div className='w-full h-5/6'>
+    <div className='yourInfo_container w-full h-fit  text-blue-950'>
+        <div className='w-full h-4/6 lg:h-5/6'>
             <header>
-              <h1 className='text-3xl xl:text-5xl font-bold'>Personal info</h1>
-              <p className='text-lg xl:text-xl text-gray-400 mt-4 mb-14'>
+              <h1 className='text-3xl 2xl:text-5xl font-bold'>Personal info</h1>
+              <p className='text-base lg:text-lg xl:text-xl text-gray-400 mt-3 mb-3 xl:mb-4 2xl:mb-14'>
                 Please provide your name, email address, and phone number.
               </p>
             </header>
 
             <div className='field_label_inputs'>
-                  <div className='input_items mb-6'>
+                  <div className='input_items mb-2 lg:mb-4 2xl:mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
-                      <label htmlFor='name' className='text-xl font-normal mb-2'>
+                      <label htmlFor='name' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
                         Name
                       </label>
-                      <span className='error_message text-red-500 font-normal text-2xl'>
+                      <span className='error_message text-red-500 font-normal text-xl xl:text-2xl'>
                         {(data?.errorMessage !== '' && data?.errorField === 'name') ?
                          data?.errorMessage : ''}
                       </span>
                     </div>
 
                     <input 
-                      className='w-full h-14 text-xl rounded-md'
+                      className={((data?.errorMessage !== '' && data?.errorField === 'name')) ? 
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
+                      }
                       id='name' 
                       type='text '
                       placeholder='Ugorji Victor'
@@ -78,20 +83,23 @@ export default function YourInfo() {
 
                   </div> 
 
-                  <div className='input_items mb-6'>
+                  <div className='input_items mb-2 lg:mb-4 2xl:mb-6'>
 
                     <div className='label_error flex justify-between items-center'>
-                      <label htmlFor='email' className='text-xl font-normal mb-2'>
+                      <label htmlFor='email' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
                         Email Address
                       </label>
-                      <span className='error_message text-red-500 font-normal text-2xl'>
+                      <span className='error_message text-red-500 font-normal text-xl xl:text-2xl'>
                         {(data?.errorMessage !== '' && data?.errorField === 'email') ?
                          data?.errorMessage : ''}
                       </span>
                     </div>
 
                     <input 
-                      className='w-full h-14 text-xl rounded-md'
+                      className={((data?.errorMessage !== '' && data?.errorField === 'email')) ? 
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
+                      }
                       id='email' 
                       type='email'
                       placeholder='email@email.com'
@@ -102,20 +110,23 @@ export default function YourInfo() {
 
                   </div> 
                   
-                  <div className='input_items mb-6'>
+                  <div className='input_items mb-2 lg:mb-4 2xl:mb-6'>
 
                   <div className='label_error flex justify-between items-center'>
-                    <label htmlFor='phone' className='text-xl font-normal mb-2'>
+                    <label htmlFor='phone' className='text-base xl:text-xl font-normal mb-1 xl:mb-2'>
                       Phone Number
                     </label>
-                    <span className='error_message text-red-500 font-normal text-2xl'>
+                    <span className='error_message text-red-500 font-normal text-xl xl:text-2xl'>
                       {(data?.errorMessage !== '' && data?.errorField === 'phone') ?
                        data?.errorMessage : ''}
                     </span>
                   </div>
 
                   <input 
-                    className='w-full h-14 text-xl rounded-md'
+                    className={((data?.errorMessage !== '' && data?.errorField === 'phone')) ? 
+                    'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                    'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
+                    }
                     id='phone'
                     type='tel' 
                     placeholder='e.g. +2348134484139'
@@ -127,10 +138,12 @@ export default function YourInfo() {
                   </div> 
           </div>
 
-          <footer className='w-full h-1/6 form_container flex justify-between items-end'>
+          <footer className='yourInfo_footer w-full h-20 xl:h-1/6 bg-white xl:bg-inherit xl:mt-0 p-4 xl:p-0
+                            flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static'
+          >
             <button></button>
             <button 
-              className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'
+              className='btn_next w-28 xl:w-32 h-12 xl:h-14 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl'
               onClick={(e) => validateInput(e)}>Next Step</button>
           </footer>
       </div>

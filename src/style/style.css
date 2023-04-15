@@ -27,6 +27,9 @@ Colors
 --White: hsl(0, 0%, 100%);
 
 }
+div.container{
+    height: 100vh;
+}
 form{
     padding: 0 1rem;
     color: --marine-blue;
@@ -45,16 +48,23 @@ div.sidebar{
 }
 div.form_component{
     flex: 10;
-    /*width: fit-content;*/
 }
 @media screen and (min-width: 1280px) {
+    
+    div.container{
+        height: 100vh;
+    }
     form{
         padding: 1.5rem;
         color: --marine-blue;
     }
     div.sidebar{
         background-image: url('../assets/images/bg-sidebar-desktop.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         position: static;
+        width: 100%;
         height: 100%;
         z-index: 0;
     }
