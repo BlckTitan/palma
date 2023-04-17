@@ -1,6 +1,6 @@
 div.plan_container{
     position: relative;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 2rem 1.5rem;
 }
 div.planCards > label.selectable_cards > input.plan:checked ~ div.card_details{
     border: 1px solid var(--marine-blue);
@@ -18,15 +18,15 @@ div.toggle_fill::after{
     position: absolute;
     top: 15%;
     left: 0.3rem;
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 100%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     transition: all 0.2s ease-in-out;
 }
 label > input:checked ~ div.toggle_fill::after{
-    transform: translateX(1.6rem);
+    transform: translateX(1.9rem);
 }
 footer > button.btn_back{
     color: var(--dark-blue);
@@ -35,10 +35,30 @@ footer > button.btn_next{
     background-color: var(--dark-blue);
     color: #fff;
 }
-
 @media screen and (min-width: 1280px) {
-   div.plan_container{
-    position: relative;
-    padding: 4rem 1rem 1rem 1rem;
+    div.plan_container{
+        position: relative;
+        padding: 1rem 5rem 1rem 5rem;
+    }
+    div.toggle_fill::after{
+        content: '';
+        position: absolute;
+        top: 15%;
+        left: 0.3rem;
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        transition: all 0.2s ease-in-out;
+    }
+    label > input:checked ~ div.toggle_fill::after{
+        transform: translateX(1.6rem);
+    }
+}
+@media screen and (min-width: 1536px) {
+    div.plan_container{
+        position: relative;
+        padding: 4rem 10rem 1rem 10rem;
     }
 }

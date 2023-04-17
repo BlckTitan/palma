@@ -94,9 +94,9 @@ export default function Plan() {
   return (
     <div className='plan_container w-full h-full  text-blue-950'>
         <div className='w-full 2xl:h-5/6'>
-            <header className='mb-2 xl:mb-4'>
-              <h1 className='text-3xl xl:text-4xl 2xl:text-5xl font-bold'>Select your plan</h1>
-              <p className='text-xl text-gray-400 mt-2 2xl:mt-4'>
+            <header className='mb-2 2xl:mb-4'>
+              <h1 className='text-3xl 2xl:text-5xl font-bold'>Select your plan</h1>
+              <p className='text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-4'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
@@ -105,11 +105,11 @@ export default function Plan() {
               {(data?.errorMessage !== '') && data?.errorMessage}
             </span>
 
-            <div className='planCards flex flex-wrap items-center justify-between mt-2 xl:mt-4'>
+            <div className='planCards flex flex-wrap items-center justify-between mt-2 2xl:mt-4'>
               {(monthlyDuration === true) && monthly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
-                  className='selectable_cards block relative w-full xl:w-52 h-20 
-                  xl:h-60 cursor-pointer mb-4 xl:mb-0' 
+                  className='selectable_cards block relative w-full sm:w-44 xl:48 2xl:w-52 h-16 sm:h-52
+                  xl:h-44 2xl:h-60 cursor-pointer mb-4 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -120,25 +120,27 @@ export default function Plan() {
                     className='plan hidden'
                   />
                   <div className='card_details 
-                            flex flex-row xl:flex-col
+                            flex flex-row items-center sm:items-start sm:flex-col
                             w-full h-full 
                             rounded-lg 
                             border border-solid border-gray-300
-                            py-8 px-4'
+                            py-3 xl:py-4 2xl:py-8 px-4'
                   >
-                    <header className='w-full h-4/5'>{plans.icon}</header>
-                    <h3 className='title font-semibold text-xl text-blue-950'>{plans.title}</h3>
-                    <span className='price text-gray-400 text-xl font-normal'>
-                      {plans.price_label_month}
-                    </span>
+                    <header className='w-16 sm:w-full h-full sm:h-4/5'>{plans.icon}</header>
+                    <div className='flex flex-col'>
+                      <h3 className='title font-semibold text-lg xl:text-xl text-blue-950'>{plans.title}</h3>
+                      <span className='price text-gray-400 text-lg xl:text-xl font-normal'>
+                        {plans.price_label_month}
+                      </span>
+                    </div>
                   </div>
                 </label>
               ))}
 
               {(monthlyDuration === false) && yearly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
-                  className='selectable_cards block relative  w-full xl:w-52 h-20 xl:h-60 
-                  cursor-pointer mb-4 xl:mb-0' 
+                  className='selectable_cards block relative  w-full sm:w-44 xl:48 2xl:w-52 
+                  h-20 sm:h-52 xl:h-48 2xl:h-60 cursor-pointer mb-3 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -148,38 +150,44 @@ export default function Plan() {
                     }} 
                     className='plan hidden'/>
                   <div className='card_details 
-                            flex flex-row xl:flex-col
+                            flex flex-row items-center sm:items-start sm:flex-col
                             w-full h-full 
                             rounded-lg 
                             border border-solid border-gray-300
-                            py-8 px-4'
+                            py-2 xl:py-4 2xl:py-8 px-4'
                   >
-                    <header className='w-full h-4/5'>{plans.icon}</header>
-                    <h3 className='title font-semibold text-xl text-blue-950'>{plans.title}</h3>
-                    <span className='price text-gray-400 text-xl font-normal'>
-                      {plans.price_label_year}
-                    </span>
-                    <span className='freePackage text-blue-950'>{plans.free}</span>
+                    <header className='w-16 sm:w-full h-full sm:h-4/5'>{plans.icon}</header>
+                    <div className='flex flex-col'>
+                      <h3 className='title font-semibold text-lg xl:text-xl text-blue-950'>{plans.title}</h3>
+                      <span className='price text-gray-400 text-md xl:text-xl font-normal'>
+                        {plans.price_label_year}
+                      </span>
+                      <span className='freePackage text-blue-950'>{plans.free}</span>
+                    </div>
                   </div>
                 </label>
               ))}
             </div>
 
-            <div className='duration w-full h-16 mt-8 flex items-center justify-center bg-gray-50 rounded-2xl'>
+            <div className='duration w-full h-12 xl:h-14 2xl:h-16 mt-2 xl:mt-6 2xl:mt-8 flex items-center justify-center bg-gray-50 rounded-2xl'>
               
-                <span className={(monthlyDuration === true) ? 'mr-4 font-semibold text-xl' : 'mr-4 font-semibold text-xl text-gray-400'}>Monthly</span>
-                    <label htmlFor='sub_duration' className='w-14 h-8  cursor-pointer flex'>
+                <span className={(monthlyDuration === true) ? 'mr-4 font-semibold text-lg xl:text-xl' : 'mr-4 font-semibold text-lg xl:text-xl text-gray-400'}>Monthly</span>
+                    <label htmlFor='sub_duration' className='w-14 h-6 xl:h-8  cursor-pointer flex'>
                       <input id='sub_duration' type='checkbox' className='hidden' value={monthlyDuration} onClick={() => setMonthlyDuration(!monthlyDuration)}/>
                       <div className='toggle_fill relative w-full h-full bg-blue-950 rounded-2xl'></div>
                     </label>
-                <span className={(monthlyDuration === false) ? 'ml-4 font-semibold text-xl' : 'ml-4 font-semibold text-xl text-gray-400'}>Yearly</span>
+                <span className={(monthlyDuration === false) ? 'ml-4 font-semibold text-lg xl:text-xl' : 'ml-4 font-semibold text-lg xl:text-xl text-gray-400'}>Yearly</span>
             </div>
 
           </div>
 
-          <footer className='w-full h-1/6 form_container flex justify-between items-end'>
-            <button className='btn_back w-32 h-16 text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
-            <button className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl' 
+          <footer className='yourInfo_footer w-full h-20 xl:h-1/6 
+            bg-white xl:bg-inherit xl:mt-0 p-4 xl:p-0
+            flex justify-between items-center xl:items-end 
+            fixed left-0 bottom-0 xl:static'
+          >
+            <button className='btn_back w-32 h-16 text-lg xl:text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
+            <button className='btn_next w-28 xl:w-32 h-12 xl:h-12 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl' 
               onClick={(monthlyDuration === true) ? 
                 (e) => validateMonthlyPlan(e) : 
                 (e) => validateYearlyPlan(e)
