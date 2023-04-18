@@ -50,7 +50,7 @@ export default function YourInfo() {
         <div className='w-full h-4/6 lg:h-5/6'>
             <header>
               <h1 className='text-3xl 2xl:text-5xl font-bold'>Personal info</h1>
-              <p className='text-base lg:text-lg xl:text-xl text-gray-400 mt-3 mb-3 xl:mb-4 2xl:mb-14'>
+              <p className='text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-3 mb-3 xl:mb-4 2xl:mb-14'>
                 Please provide your name, email address, and phone number.
               </p>
             </header>

@@ -1,6 +1,6 @@
 div.summary_container{
     position: relative;
-    padding: 4rem 10rem 1rem 10rem;
+    padding: 1.5rem;
 }
 div.summary_report button.btn_change:hover{
     color:  rgb(107 114 128);
@@ -17,4 +17,15 @@ footer > button.btn_confirm{
     background-color: var(--purplish-blue);
     color: #fff;
 }
-/**var(--purplish-blue)*/
+@media screen and (min-width: 1280px) {
+    div.summary_container{
+        position: relative;
+        padding: 1rem 5rem 1rem 5rem;
+    }
+}
+@media screen and (min-width: 1536px) {
+    div.summary_container{
+        position: relative;
+        padding: 4rem 10rem 1rem 10rem;
+    }
+}

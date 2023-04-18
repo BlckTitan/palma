@@ -38,7 +38,7 @@ footer > button.btn_next{
 @media screen and (min-width: 1280px) {
     div.plan_container{
         position: relative;
-        padding: 1rem 5rem 1rem 5rem;
+        padding: 1rem 5rem;
     }
     div.toggle_fill::after{
         content: '';

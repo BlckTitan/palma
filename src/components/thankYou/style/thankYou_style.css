@@ -1,4 +1,17 @@
 div.thankYou_container{
     position: relative;
-    padding: 4rem 10rem 1rem 10rem;
+    padding: 2.5rem 1.5rem;
+}
+@media screen and (min-width: 1280px) {
+    
+    div.thankYou_container{
+        position: relative;
+        padding: 1rem 5rem;
+    }
+}
+@media screen and (min-width: 1536px) {
+    div.thankYou_container{
+        position: relative;
+        padding: 4rem 10rem 1rem 10rem;
+    }
 }
