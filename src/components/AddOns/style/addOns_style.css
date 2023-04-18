@@ -52,7 +52,12 @@ footer > button.btn_next{
     background-color: var(--dark-blue);
     color: #fff;
 }
-/**var(--purplish-blue)*/
+@media screen and (min-width: 600px) {
+    div.addOns_list > label.selectable_cards > input{
+        width: 24px;
+        height: 20px;
+    }
+}
 @media screen and (min-width: 1280px) {
     div.addOns_container{
         position: relative;
@@ -83,17 +88,6 @@ footer > button.btn_next{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    div.addOns_list > label.selectable_cards > input::after{
-        content: '\e876';
-        font-size: 1.7rem;
-        font-weight: 900;
-        font-family: 'Material Symbols Outlined';
-        background-color: var(--purplish-blue);
-        width: auto;
-        height: 30px;
-        border-radius: 0.3rem;
-        display: none;
     }
 }
 @media screen and (min-width: 1536px) {
