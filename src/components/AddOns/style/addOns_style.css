@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0');
 div.addOns_container{
     position: relative;
-    padding: 4rem 10rem 1rem 10rem;
+    padding: 2rem 1rem;
 }
 div.addOns_list > label.selectable_cards:has(input.checkbox:checked){
     border: 1px solid var(--purplish-blue);
@@ -18,7 +18,7 @@ div.addOns_list > label.selectable_cards > input{
     appearance: none;
     -webkit-appearance: none;
     width: 30px;
-    height: 28px;
+    height: 20px;
     background-color: #fff;
     border-radius: 0.3rem;
     cursor: pointer;
@@ -31,12 +31,12 @@ div.addOns_list > label.selectable_cards > input{
 }
 div.addOns_list > label.selectable_cards > input::after{
     content: '\e876';
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 900;
     font-family: 'Material Symbols Outlined';
     background-color: var(--purplish-blue);
     width: auto;
-    height: 30px;
+    height: 20px;
     border-radius: 0.3rem;
     display: none;
 }
@@ -53,3 +53,52 @@ footer > button.btn_next{
     color: #fff;
 }
 /**var(--purplish-blue)*/
+@media screen and (min-width: 1280px) {
+    div.addOns_container{
+        position: relative;
+        padding: 1rem 5rem;
+    }
+    div.addOns_list > label.selectable_cards > input::after{
+        content: '\e876';
+        font-size: 1.7rem;
+        font-weight: 900;
+        font-family: 'Material Symbols Outlined';
+        background-color: var(--purplish-blue);
+        width: auto;
+        height: 30px;
+        border-radius: 0.3rem;
+        display: none;
+    }
+    div.addOns_list > label.selectable_cards > input{
+        appearance: none;
+        -webkit-appearance: none;
+        width: 30px;
+        height: 28px;
+        background-color: #fff;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        border: 1px solid #d5d5d5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.addOns_list > label.selectable_cards > input::after{
+        content: '\e876';
+        font-size: 1.7rem;
+        font-weight: 900;
+        font-family: 'Material Symbols Outlined';
+        background-color: var(--purplish-blue);
+        width: auto;
+        height: 30px;
+        border-radius: 0.3rem;
+        display: none;
+    }
+}
+@media screen and (min-width: 1536px) {
+    div.addOns_container{
+        position: relative;
+        padding: 4rem 10rem 1rem 10rem;
+    }
+}

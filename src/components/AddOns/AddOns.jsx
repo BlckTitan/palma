@@ -60,8 +60,8 @@ export default function AddOns() {
     <div className='addOns_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
             <header>
-              <h1 className='text-5xl font-bold'>Pick Add-ons</h1>
-              <p className='text-xl text-gray-400 mt-4 mb-6'>
+              <h1 className='text-3xl 2xl:text-5xl font-bold'>Pick Add-ons</h1>
+              <p className='text-base lg:text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-4 mb-2 xl:mb-6'>
                Add-ons help enhance your gaming experience.
               </p>
             </header>
@@ -69,62 +69,62 @@ export default function AddOns() {
             <div className='addOns_list flex flex-col'>
 
               <label htmlFor='online_service' className='selectable_cards 
-                      relative w-full h-28 rounded-lg 
-                      cursor-pointer px-16 my-2
+                      relative w-full h-24 xl:h-28 rounded-lg 
+                      cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
                   '>
                   <input id='online_service' type='checkbox' className='checkbox mr-4' onClick={(e) => handleCheck(e, 'service')}/>
                   <div className='card_details 
-                            flex flex-col
+                            flex flex-col justify-center
                             w-full h-full 
-                            py-8 px-4 relative'
+                            py-2 xl:py-8 px-0 xl:px-4 relative'
                   >
-                    <h3 className='title font-semibold text-xl text-blue-950'>Online service</h3>
-                    <p className='freePackage text-gray-400 font-normal text-xl'>Access to multiplayer games</p>
+                    <h3 className='title font-bold xl:font-semibold text-lg xl:text-xl text-blue-950'>Online service</h3>
+                    <p className='freePackage text-gray-400 font-normal text-base sm:text-lg xl:text-xl'>Access to multiplayer games</p>
                   </div>
                   
-                  <span className='price text-lg font-semibold'>{(data?.plan[2] === true) ? '+$1/mo' : '+$10/yr'}</span>
+                  <span className='price text-base xl:text-lg font-semibold xl:font-semibold'>{(data?.plan[2] === true) ? '+$1/mo' : '+$10/yr'}</span>
               </label>
 
               <label htmlFor='larger_storage' className='selectable_cards 
-                      relative w-full h-28 rounded-lg 
-                      cursor-pointer px-16 my-2
+                      relative w-full h-24 xl:h-28 rounded-lg 
+                      cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
                   '>
                   <input id='larger_storage' type='checkbox' className='checkbox mr-4' onClick={(e) => handleCheck(e, 'storage')}/>
                   <div className='card_details 
-                            flex flex-col
+                            flex flex-col justify-center
                             w-full h-full 
-                            py-8 px-4 relative'
+                            py-2 xl:py-8 px-0 xl:px-4 relative'
                   >
                     
-                    <h3 className='title font-semibold text-xl text-blue-950'>Larger storage</h3>
-                    <p className='freePackage text-gray-400 font-normal text-xl'>Extra 1TB of cloud save</p>
+                    <h3 className='title font-bold xl:font-semibold text-lg xl:text-xl text-blue-950'>Larger storage</h3>
+                    <p className='freePackage text-gray-400 font-normal text-base sm:text-lg xl:text-xl'>Extra 1TB of cloud save</p>
                   </div>
                   
-                  <span className='price text-lg font-semibold'>{(data?.plan[2] === true) ? '+$2/mo' : '+$20/yr'}</span>
+                  <span className='price text-base xl:text-lg font-semibold xl:font-semibold'>{(data?.plan[2] === true) ? '+$2/mo' : '+$20/yr'}</span>
               </label>
 
               <label htmlFor='customizable_profile' className='selectable_cards 
-                      relative w-full h-28 rounded-lg 
-                      cursor-pointer px-16 my-2
+                      relative w-full h-24 xl:h-28 rounded-lg 
+                      cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
                   '>
                   <input id='customizable_profile' type='checkbox' className='checkbox mr-4' onClick={(e) => handleCheck(e, 'profile')}/>
                   <div className='card_details 
-                            flex flex-col
+                            flex flex-col justify-center
                             w-full h-full 
-                            py-8 px-4 relative'
+                            py-2 xl:py-8 px-0 xl:px-4 relative'
                   >
                     
-                    <h3 className='title font-semibold text-xl text-blue-950'>Customizable profile</h3>
-                    <p className='freePackage text-gray-400 font-normal text-xl'>Custom theme on your profile</p>
+                    <h3 className='title font-bold xl:font-semibold text-base xl:text-xl text-blue-950'>Customizable profile</h3>
+                    <p className='freePackage text-gray-400 font-normal text-base sm:text-lg xl:text-xl'>Custom theme on your profile</p>
                   </div>
                   
-                  <span className='price text-lg font-semibold'>{(data?.plan[2] === true) ? '+$2/mo' : '+$20/yr'}</span>
+                  <span className='price text-base xl:text-lg font-semibold xl:font-semibold'>{(data?.plan[2] === true) ? '+$2/mo' : '+$20/yr'}</span>
               </label>
 
 
@@ -132,13 +132,15 @@ export default function AddOns() {
 
           </div>
 
-          <footer className='w-full h-1/6 form_container flex justify-between items-end'>
+          <footer className='form_container w-full h-20 xl:h-1/6 bg-white xl:bg-inherit xl:mt-0 p-4 xl:p-0
+                            flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static'>
             <button 
-              className='btn_back w-32 h-16 text-xl font-semibold'
+              className='btn_back w-32 h-16 text-lg xl:text-xl font-semibold'
               onClick={() => dispatch(prevStep())}
             >Go Back</button>
             <button 
-              className='btn_next w-32 h-16 text-white text-xl font-semibold rounded-xl'
+              className='btn_next w-28 xl:w-32 h-12 xl:h-14 2xl:h-16
+               text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl'
               onClick={() => dispatch(nextStep())}
             >Next Step</button>
           </footer>
