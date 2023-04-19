@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nextStep, getPersonalInfo, getErrorMessage, getErrorField} from '../../app/purchaseSlice/purchaseSlice';
 
 export default function YourInfo() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
+  
     const data = useSelector((state) => state.subscriptionData);
+    const [name, setName] = useState(''  || data?.personalInfo[0]);
+    const [email, setEmail] = useState('' || data?.personalInfo[1])
+    const [phone, setPhone] = useState('' || data?.personalInfo[2])
     let emptyField = ''
 
     const dispatch = useDispatch();
@@ -44,7 +45,6 @@ export default function YourInfo() {
     useEffect(()=>{
       dispatch(getPersonalInfo([name, email, phone]))
     }, [name, email, phone]);
-
   return (
     <div className='yourInfo_container w-full h-fit  text-blue-950'>
         <div className='w-full h-4/6 lg:h-5/6'>
@@ -143,7 +143,7 @@ export default function YourInfo() {
           >
             <button></button>
             <button 
-              className='btn_next w-28 xl:w-32 h-12 xl:h-14 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl'
+              className='btn_next w-28 xl:w-32 h-12 xl:h-12 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl'
               onClick={(e) => validateInput(e)}>Next Step</button>
           </footer>
       </div>
