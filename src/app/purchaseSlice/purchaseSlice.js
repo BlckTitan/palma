@@ -4,7 +4,7 @@ export const purchaseSlice = createSlice({
     name: 'purchaseStep',
     initialState: {
         step: 1,
-        personalInfo: [],
+        personalInfo: ['', '', ''],
         plan: [], 
         addOns: [],
         errorMessage: '',
