@@ -4,7 +4,7 @@ import './style/style.css';
 import Sidebar from './components/sidebar/Sidebar';
 import YourInfo from './components/yourInfo/YourInfo';
 import Plan from './components/plan/Plan';
-import AddOns from './components/addOns/AddOns';
+import AddOns from './components/AddOns/AddOns';
 import Summary from './components/summary/Summary';
 import ThankYou from './components/thankYou/ThankYou';
 
