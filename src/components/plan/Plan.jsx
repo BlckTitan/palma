@@ -35,7 +35,7 @@ export default function Plan() {
     }
     useEffect(()=>{
       dispatch(getPlan([planName, planCost, monthlyDuration]))
-    }, [monthlyDuration, planName, planCost])
+    }, [monthlyDuration, planName, planCost, dispatch])
   
     const validateMonthlyPlan = (e) =>{
       e.preventDefault()

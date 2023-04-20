@@ -44,7 +44,7 @@ export default function YourInfo() {
 
     useEffect(()=>{
       dispatch(getPersonalInfo([name, email, phone]))
-    }, [name, email, phone]);
+    }, [name, email, phone, dispatch]);
   return (
     <div className='yourInfo_container w-full h-fit  text-blue-950'>
         <div className='w-full h-4/6 lg:h-5/6'>
