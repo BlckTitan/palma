@@ -54,7 +54,7 @@ export default function AddOns() {
 
   useEffect(()=>{
     dispatch(getAddOns([service, storage, customProfile]))
-  }, [service, storage, customProfile])
+  }, [service, storage, customProfile, dispatch])
     
   return (
     <div className='addOns_container w-full h-full  text-blue-950'>
