@@ -14,7 +14,6 @@ export default function Summary() {
 
       return data.plan[1] + totalAddOns
     }
-    console.log(data?.addOns, totalAddOns)
   return (
     <div className='summary_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
