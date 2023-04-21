@@ -70,8 +70,8 @@ export default function YourInfo() {
 
                     <input 
                       className={((data?.errorMessage !== '' && data?.errorField === 'name')) ? 
-                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
-                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
+                      'w-full h-10 xl:h-10 2xl:h-12 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                      'w-full h-10 xl:h-10 2xl:h-12 text-lg 2xl:text-xl rounded-md'
                       }
                       id='name' 
                       type='text '
@@ -97,8 +97,8 @@ export default function YourInfo() {
 
                     <input 
                       className={((data?.errorMessage !== '' && data?.errorField === 'email')) ? 
-                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
-                      'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
+                      'w-full h-10 xl:h-10 2xl:h-12 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                      'w-full h-10 xl:h-10 2xl:h-12 text-lg 2xl:text-xl rounded-md'
                       }
                       id='email' 
                       type='email'
@@ -124,8 +124,8 @@ export default function YourInfo() {
 
                   <input 
                     className={((data?.errorMessage !== '' && data?.errorField === 'phone')) ? 
-                    'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
-                    'w-full h-10 xl:h-10 2xl:h-14 text-lg 2xl:text-xl rounded-md'
+                    'w-full h-10 xl:h-10 2xl:h-12 text-lg 2xl:text-xl rounded-md border-2 border-solid border-red-500' :
+                    'w-full h-10 xl:h-10 2xl:h-12 text-lg 2xl:text-xl rounded-md'
                     }
                     id='phone'
                     type='tel' 
