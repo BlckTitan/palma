@@ -17,7 +17,7 @@ export default function Sidebar() {
         {
             sidebar_items.map((item, index) => (
                 <li className='flex flex-col xl:flex-row items-center 
-                w-8 xl:w-full mr-5 md:mr-8 lg:mr-8 2xl:mr-0 h-8 xl:h-16 mt-4 xl:mt-2 2xl:mt-8 xl:pl-4 2xl:pl-14 text-white  lg:static' key={index}>
+                w-8 xl:w-full mr-5 md:mr-8 lg:mr-8 2xl:mr-0 h-8 xl:h-16 mt-4 xl:mt-2 2xl:mt-8 xl:pl-4 2xl:pl-6 text-white  lg:static' key={index}>
                     <div 
                         className={ (step === item.step_count) ? 
                         'step_count flex justify-center items-center  xl:mr-6 text-2xl w-8 xl:w-8 2xl:w-12 h-8 xl:h-8 2xl:h-12 rounded-full bg-cyan-100 text-blue-950' : 

@@ -50,7 +50,7 @@ export default function YourInfo() {
         <div className='w-full h-4/6 lg:h-5/6'>
             <header>
               <h1 className='text-3xl 2xl:text-5xl font-bold'>Personal info</h1>
-              <p className='text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-3 mb-3 xl:mb-4 2xl:mb-8'>
+              <p className='text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-3 mb-3 xl:mb-4'>
                 Please provide your name, email address, and phone number.
               </p>
             </header>
@@ -140,7 +140,7 @@ export default function YourInfo() {
 
           <footer className='yourInfo_footer w-full h-20 xl:h-1/6 bg-white xl:bg-inherit p-4 xl:p-0
                             flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static
-                            mt-0 xl:mt-8'
+                            mt-0 xl:mt-16'
           >
             <button></button>
             <button 

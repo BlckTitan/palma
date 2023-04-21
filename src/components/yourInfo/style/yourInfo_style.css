@@ -23,7 +23,7 @@ footer > button.btn_next{
 @media screen and (min-width: 1280px) {
     div.yourInfo_container{
         position: relative;
-        padding: 3rem 5rem 1rem 5rem;
+        padding: 1.5rem 5rem 1rem 5rem;
     }
     div.field_label_inputs input:active,
     div.field_label_inputs input:focus,
