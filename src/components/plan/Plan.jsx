@@ -97,6 +97,8 @@ export default function Plan() {
             <header className='mb-2 2xl:mb-4'>
               <h1 className='text-3xl 2xl:text-4xl font-bold'>Select your plan</h1>
               <p className='text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-2'>
+              <h1 className='text-3xl 2xl:text-4xl font-bold'>Select your plan</h1>
+              <p className='text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-4'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
