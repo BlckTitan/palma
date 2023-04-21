@@ -95,8 +95,8 @@ export default function Plan() {
     <div className='plan_container w-full h-full  text-blue-950'>
         <div className='w-full 2xl:h-5/6'>
             <header className='mb-2 2xl:mb-4'>
-              <h1 className='text-3xl 2xl:text-5xl font-bold'>Select your plan</h1>
-              <p className='text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-1 2xl:mt-4'>
+              <h1 className='text-3xl 2xl:text-4xl font-bold'>Select your plan</h1>
+              <p className='text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-2'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
@@ -105,11 +105,11 @@ export default function Plan() {
               {(data?.errorMessage !== '') && data?.errorMessage}
             </span>
 
-            <div className='planCards flex flex-wrap items-center justify-between mt-2 2xl:mt-4'>
+            <div className='planCards flex flex-wrap items-center justify-between mt-2 2xl:mt-2'>
               {(monthlyDuration === true) && monthly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
                   className='selectable_cards block relative w-full sm:w-44 xl:48 2xl:w-52 h-16 sm:h-52
-                  xl:h-44 2xl:h-60 cursor-pointer mb-4 xl:mb-0' 
+                  xl:h-44 2xl:h-52 cursor-pointer mb-4 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -124,7 +124,7 @@ export default function Plan() {
                             w-full h-full 
                             rounded-lg 
                             border border-solid border-gray-300
-                            py-3 xl:py-4 2xl:py-8 px-4'
+                            py-3 xl:py-4 2xl:py-6 px-4'
                   >
                     <header className='w-16 sm:w-full h-full sm:h-4/5'>{plans.icon}</header>
                     <div className='flex flex-col'>
@@ -140,7 +140,7 @@ export default function Plan() {
               {(monthlyDuration === false) && yearly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
                   className='selectable_cards block relative  w-full sm:w-44 xl:48 2xl:w-52 
-                  h-20 sm:h-52 xl:h-48 2xl:h-60 cursor-pointer mb-3 xl:mb-0' 
+                  h-20 sm:h-52 xl:h-48 2xl:h-52 cursor-pointer mb-3 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -154,7 +154,7 @@ export default function Plan() {
                             w-full h-full 
                             rounded-lg 
                             border border-solid border-gray-300
-                            py-2 xl:py-4 2xl:py-8 px-4'
+                            py-2 xl:py-4 2xl:py-6 px-4'
                   >
                     <header className='w-16 sm:w-full h-full sm:h-4/5'>{plans.icon}</header>
                     <div className='flex flex-col'>
@@ -182,9 +182,9 @@ export default function Plan() {
           </div>
 
           <footer className='yourInfo_footer w-full h-20 xl:h-1/6 
-            bg-white xl:bg-inherit xl:mt-0 p-4 xl:p-0
+            bg-white xl:bg-inherit p-4 xl:p-0
             flex justify-between items-center xl:items-end 
-            fixed left-0 bottom-0 xl:static'
+            fixed left-0 bottom-0 xl:mt-16 xl:static'
           >
             <button className='btn_back w-32 h-16 text-lg xl:text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
             <button className='btn_next w-28 xl:w-32 h-12 xl:h-12 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl' 
