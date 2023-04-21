@@ -140,7 +140,7 @@ export default function YourInfo() {
 
           <footer className='yourInfo_footer w-full h-20 xl:h-1/6 bg-white xl:bg-inherit p-4 xl:p-0
                             flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static
-                            mt-0 xl:mt-8'
+                            mt-0 xl:mt-16'
           >
             <button></button>
             <button 
