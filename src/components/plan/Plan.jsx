@@ -95,8 +95,8 @@ export default function Plan() {
     <div className='plan_container w-full h-full  text-blue-950'>
         <div className='w-full 2xl:h-5/6'>
             <header className='mb-2 2xl:mb-4'>
-              <h1 className='text-3xl 2xl:text-5xl font-bold'>Select your plan</h1>
-              <p className='text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-1 2xl:mt-4'>
+              <h1 className='text-3xl 2xl:text-4xl font-bold'>Select your plan</h1>
+              <p className='text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-4'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
@@ -109,7 +109,7 @@ export default function Plan() {
               {(monthlyDuration === true) && monthly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
                   className='selectable_cards block relative w-full sm:w-44 xl:48 2xl:w-52 h-16 sm:h-52
-                  xl:h-44 2xl:h-60 cursor-pointer mb-4 xl:mb-0' 
+                  xl:h-44 2xl:h-52 cursor-pointer mb-4 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
@@ -140,7 +140,7 @@ export default function Plan() {
               {(monthlyDuration === false) && yearly_plan.map((plans, index) => (
                 <label htmlFor={plans.title} 
                   className='selectable_cards block relative  w-full sm:w-44 xl:48 2xl:w-52 
-                  h-20 sm:h-52 xl:h-48 2xl:h-60 cursor-pointer mb-3 xl:mb-0' 
+                  h-20 sm:h-52 xl:h-48 2xl:h-52 cursor-pointer mb-3 xl:mb-0' 
                   key={index}
                 >
                   <input id={plans.title} name='subPlan' type='radio' 
