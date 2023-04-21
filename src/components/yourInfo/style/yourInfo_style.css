@@ -38,3 +38,9 @@ footer > button.btn_next{
         padding: 1rem;
     }
 }
+@media screen and (min-width: 1280px) {
+    div.yourInfo_container{
+        position: relative;
+        padding: 1.5rem 6rem 1rem 6rem;
+    }
+}
