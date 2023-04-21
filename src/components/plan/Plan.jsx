@@ -184,7 +184,7 @@ export default function Plan() {
           <footer className='yourInfo_footer w-full h-20 xl:h-1/6 
             bg-white xl:bg-inherit p-4 xl:p-0
             flex justify-between items-center xl:items-end 
-            fixed left-0 bottom-0 xl:mt-12 xl:static'
+            fixed left-0 bottom-0 xl:mt-12 2xl:mt-8 xl:static'
           >
             <button className='btn_back w-32 h-16 text-lg xl:text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
             <button className='btn_next w-28 xl:w-32 h-12 xl:h-12 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl' 
