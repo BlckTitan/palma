@@ -96,7 +96,7 @@ export default function Plan() {
         <div className='w-full 2xl:h-5/6'>
             <header className='mb-1'>
               <h1 className='text-3xl 2xl:text-4xl font-bold'>Select your plan</h1>
-              <p className='text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-2'>
+              <p className='text-base lg:text-lg xl:text-xl text-gray-400 mt-1 2xl:mt-2'>
                You have the option of monthly or yearly billing.
               </p>
             </header>
