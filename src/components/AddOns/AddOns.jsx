@@ -69,7 +69,7 @@ export default function AddOns() {
             <div className='addOns_list flex flex-col'>
 
               <label htmlFor='online_service' className='selectable_cards 
-                      relative w-full h-24 xl:h-24 2xl:h-28 rounded-lg 
+                      relative w-full h-24 xl:h-24 rounded-lg 
                       cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
@@ -88,7 +88,7 @@ export default function AddOns() {
               </label>
 
               <label htmlFor='larger_storage' className='selectable_cards 
-                      relative w-full h-24 xl:h-24  2xl:h-28 rounded-lg 
+                      relative w-full h-24 xl:h-24 rounded-lg 
                       cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
@@ -108,7 +108,7 @@ export default function AddOns() {
               </label>
 
               <label htmlFor='customizable_profile' className='selectable_cards 
-                      relative w-full h-24 xl:h-24  2xl:h-28 rounded-lg 
+                      relative w-full h-24 xl:h-24 rounded-lg 
                       cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
