@@ -172,7 +172,7 @@ export default function Plan() {
             <div className='duration w-full h-12 xl:h-14 2xl:h-16 mt-2 xl:mt-6 2xl:mt-8 flex items-center justify-center bg-gray-50 rounded-2xl'>
               
                 <span className={(monthlyDuration === true) ? 'mr-4 font-semibold text-lg xl:text-xl' : 'mr-4 font-semibold text-lg xl:text-xl text-gray-400'}>Monthly</span>
-                    <label htmlFor='sub_duration' className='w-14 h-6 xl:h-8  cursor-pointer flex'>
+                    <label htmlFor='sub_duration' className='w-14 h-6 xl:h-7  cursor-pointer flex'>
                       <input id='sub_duration' type='checkbox' className='hidden' value={monthlyDuration} onClick={() => setMonthlyDuration(!monthlyDuration)}/>
                       <div className='toggle_fill relative w-full h-full bg-blue-950 rounded-2xl'></div>
                     </label>
@@ -187,7 +187,7 @@ export default function Plan() {
             fixed left-0 bottom-0 xl:mt-12 2xl:mt-4 xl:static'
           >
             <button className='btn_back w-32 h-16 text-lg xl:text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
-            <button className='btn_next w-28 xl:w-32 h-12 xl:h-12 2xl:h-16 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl' 
+            <button className='btn_next w-28 xl:w-32 h-12 xl:h-12 2xl:h-14 text-white text-lg xl:text-xl font-normal xl:font-semibold rounded-md 2xl:rounded-xl' 
               onClick={(monthlyDuration === true) ? 
                 (e) => validateMonthlyPlan(e) : 
                 (e) => validateYearlyPlan(e)
