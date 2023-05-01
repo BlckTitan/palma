@@ -56,7 +56,7 @@ footer > button.btn_next{
         transform: translateX(1.6rem);
     }
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1536px) {
     div.plan_container{
         position: relative;
         padding: 1.5rem 6rem 1rem 6rem;
