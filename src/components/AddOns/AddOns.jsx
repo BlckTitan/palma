@@ -61,7 +61,7 @@ export default function AddOns() {
         <div className='w-full h-5/6'>
             <header>
               <h1 className='text-3xl 2xl:text-4xl font-bold'>Pick Add-ons</h1>
-              <p className='text-lg lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-1 2xl:mt-2 mb-2 xl:mb-2 2xl:mb-4'>
+              <p className='text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-1 2xl:mt-2 mb-2 xl:mb-2 2xl:mb-4'>
                Add-ons help enhance your gaming experience.
               </p>
             </header>
@@ -78,7 +78,7 @@ export default function AddOns() {
                   <div className='card_details 
                             flex flex-col justify-center
                             w-full h-full 
-                            py-2 xl:py-4 2xl:py-8 px-0 xl:px-4 relative'
+                            py-2 xl:py-4 2xl:py-4 px-0 xl:px-4 relative'
                   >
                     <h3 className='title font-bold xl:font-semibold text-lg xl:text-xl text-blue-950'>Online service</h3>
                     <p className='freePackage text-gray-400 font-normal text-base sm:text-lg xl:text-xl'>Access to multiplayer games</p>
@@ -97,7 +97,7 @@ export default function AddOns() {
                   <div className='card_details 
                             flex flex-col justify-center
                             w-full h-full 
-                            py-2 xl:py-4 2xl:py-8 px-0 xl:px-4 relative'
+                            py-2 xl:py-4 2xl:py-4 px-0 xl:px-4 relative'
                   >
                     
                     <h3 className='title font-bold xl:font-semibold text-lg xl:text-xl text-blue-950'>Larger storage</h3>
@@ -117,7 +117,7 @@ export default function AddOns() {
                   <div className='card_details 
                             flex flex-col justify-center
                             w-full h-full 
-                            py-2 xl:py-4 2xl:py-8 px-0 xl:px-4 relative'
+                            py-2 xl:py-4 2xl:py-4 px-0 xl:px-4 relative'
                   >
                     
                     <h3 className='title font-bold xl:font-semibold text-base xl:text-xl text-blue-950'>Customizable profile</h3>
