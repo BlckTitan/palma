@@ -89,7 +89,8 @@ footer > button.btn_next{
         justify-content: center;
         align-items: center;
     }
-}@media screen and (min-width: 1536px) {
+}
+@media screen and (min-width: 1536px) {
     div.addOns_container{
         position: relative;
         padding: 1.5rem 6rem 1rem 6rem;

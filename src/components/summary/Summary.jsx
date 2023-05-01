@@ -18,16 +18,16 @@ export default function Summary() {
     <div className='summary_container w-full h-full  text-blue-950'>
         <div className='w-full h-5/6'>
             <header>
-              <h1 className='text-3xl 2xl:text-5xl font-bold'>Finishing up</h1>
-              <p className='text-base  2xl:text-2xl lg:text-lg xl:text-xl mt-3 2xl:mt-4 mb-3 xl:mb-4 2xl:mb-6 text-gray-400  '>
+              <h1 className='text-3xl 2xl:text-4xl font-bold'>Finishing up</h1>
+              <p className='text-base lg:text-lg xl:text-xl mt-3 2xl:mt-4 mb-3 xl:mb-4 2xl:mb-6 text-gray-400  '>
                Double-check everything looks OK before confirming.
               </p>
             </header>
 
             <div className='summary_report w-full min-h-fit'>
 
-              <div className='purchaseSummary bg-gray-50 rounded-lg px-4 2xl:px-12'>
-                <header className='py-4 2xl:py-8 border-solid border-b-2'>
+              <div className='purchaseSummary bg-gray-50 rounded-lg px-4 xl:px-8'>
+                <header className='py-4 xl:py-4 border-solid border-b-2'>
                   <div className='title_price flex items-center justify-between'>
                     <h3 className='text-xl 2xl:text-2xl font-semibold text-blue-950'>{data?.plan[0]}</h3>
                     <span className='text-xl 2xl:text-2xl font-semibold text-blue-950'>
@@ -40,7 +40,7 @@ export default function Summary() {
                   >Change</button>
                 </header>
 
-                <div className='addOns py-2 2xl:py-8'>
+                <div className='addOns py-2 xl:py-4'>
                   {data?.addOns.map((purchase_addOns, index) => (
                     <div className='addOn_item flex items-center justify-between mb-2 2xl:mb-4' key={index}>
                           <p className='text-lg 2xl:text-xl text-gray-400 '>
@@ -74,7 +74,7 @@ export default function Summary() {
                             flex justify-between items-center xl:items-end fixed left-0 bottom-0 xl:static'>
             <button className='btn_back w-32 h-12 xl:h-14 2xl:h-16 text-lg xl:text-xl font-semibold' onClick={() => dispatch(prevStep())}>Go Back</button>
             <button 
-              className='btn_confirm w-28 xl:w-32 h-12 xl:h-14 2xl:h-16 text-white text-lg xl:text-xl 
+              className='btn_confirm w-28 xl:w-32 h-12 xl:h-12 2xl:h-14 text-white text-lg xl:text-xl 
               font-normal xl:font-semibold rounded-md 2xl:rounded-xl' 
               onClick={() => dispatch(nextStep())}
               type='submit'
