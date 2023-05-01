@@ -2,7 +2,8 @@ div.plan_container{
     position: relative;
     padding: 2rem 1.5rem;
 }
-div.planCards > label.selectable_cards > input.plan:checked ~ div.card_details{
+div.planCards > label.selectable_cards > input.plan:checked ~ div.card_details,
+div.planCards > label.selectable_cards > input.plan.checked ~ div.card_details{
     border: 1px solid var(--marine-blue);
     background-color: rgb(248 250 252);
 }

@@ -3,7 +3,8 @@ div.addOns_container{
     position: relative;
     padding: 2rem 1rem;
 }
-div.addOns_list > label.selectable_cards:has(input.checkbox:checked){
+div.addOns_list > label.selectable_cards:has(input.checkbox:checked),
+div.addOns_list > label.selectable_cards:has(input.checkbox.checked){
     border: 1px solid var(--purplish-blue);
     background-color: rgb(248 250 252);
 }
@@ -40,7 +41,8 @@ div.addOns_list > label.selectable_cards > input::after{
     border-radius: 0.3rem;
     display: none;
 }
-div.addOns_list > label.selectable_cards > input.checkbox:checked::after{
+div.addOns_list > label.selectable_cards > input.checkbox:checked::after,
+div.addOns_list > label.selectable_cards > input.checkbox.checked::after{
     display: flex;
     justify-content: center;
     align-items: center;

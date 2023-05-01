@@ -5,8 +5,8 @@ export const purchaseSlice = createSlice({
     initialState: {
         step: 1,
         personalInfo: ['', '', ''],
-        plan: [], 
-        addOns: [],
+        plan: ['', '', ''], 
+        addOns: ['', '', ''],
         errorMessage: '',
         errorField: ''
     },

@@ -9,11 +9,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nextStep, prevStep, getPlan, getErrorMessage } from '../../app/purchaseSlice/purchaseSlice';
 
 export default function Plan() {
-    const [monthlyDuration, setMonthlyDuration] = useState(true);
-    const [planCost, setPlanCost] = useState('');
-    const [planName, setPlanName] = useState('');
+  const data = useSelector((state) => state.subscriptionData)
+    const [monthlyDuration, setMonthlyDuration] = useState(true || data?.plan[2]);
+    const [planCost, setPlanCost] = useState('' || data?.plan[1]);
+    const [planName, setPlanName] = useState('' || data?.plan[0]);
 
-    const data = useSelector((state) => state.subscriptionData)
 
     const dispatch = useDispatch()
 
@@ -117,7 +117,7 @@ export default function Plan() {
                           setPlanName(plans.title)
                           setPlanCost(plans.price_month)
                     }} 
-                    className='plan hidden'
+                    className={(planCost !== '' && plans.price_month === planCost) ? 'plan hidden checked' : 'plan hidden'}
                   />
                   <div className='card_details 
                             flex flex-row items-center sm:items-start sm:flex-col
@@ -148,7 +148,7 @@ export default function Plan() {
                           setPlanName(plans.title)
                           setPlanCost(plans.price_year)
                     }} 
-                    className='plan hidden'/>
+                    className={(planCost !== '' && plans.price_month === planCost) ? 'plan hidden checked' : 'plan hidden'}/>
                   <div className='card_details 
                             flex flex-row items-center sm:items-start sm:flex-col
                             w-full h-full 
@@ -197,3 +197,4 @@ export default function Plan() {
     </div>
   )
 }
+//{(planCost !== '' && plans.price_month === planCost) && 'checked'}

@@ -10,7 +10,6 @@ export default function YourInfo() {
     const [email, setEmail] = useState('' || data?.personalInfo[1])
     const [phone, setPhone] = useState('' || data?.personalInfo[2])
     let emptyField = ''
-    console.log(data?.personalInfo[0])
     const dispatch = useDispatch();
     
     const validateInput = (e) =>{

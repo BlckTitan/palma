@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nextStep, prevStep, getAddOns } from '../../app/purchaseSlice/purchaseSlice';
 
 export default function AddOns() {
-    const [service, setService] = useState([])
-    const [storage, setStorage] = useState([])
-    const [customProfile, setCustomProfile] = useState([])
     const data = useSelector((state) => state.subscriptionData)
+    const [service, setService] = useState('' || data?.addOns[0])
+    const [storage, setStorage] = useState('' || data?.addOns[1])
+    const [customProfile, setCustomProfile] = useState('' || data?.addOns[2])
     const dispatch = useDispatch()
 
     const handleCheck = (e, field) => {
@@ -74,7 +74,9 @@ export default function AddOns() {
                       flex justify-between items-center
                       border border-solid border-gray-300
                   '>
-                  <input id='online_service' type='checkbox' className='checkbox mr-4' onClick={(e) => handleCheck(e, 'service')}/>
+                  <input id='online_service' type='checkbox' 
+                  className={((data?.addOns[0] !== '') && (data?.addOns[0].title === 'Online service')) ? ' checked checkbox mr-4' : 'checkbox mr-4'}  
+                  onClick={(e) => handleCheck(e, 'service')}/>
                   <div className='card_details 
                             flex flex-col justify-center
                             w-full h-full 
@@ -93,7 +95,9 @@ export default function AddOns() {
                       flex justify-between items-center
                       border border-solid border-gray-300
                   '>
-                  <input id='larger_storage' type='checkbox' className='checkbox mr-4' onClick={(e) => handleCheck(e, 'storage')}/>
+                  <input id='larger_storage' type='checkbox' 
+                  className={((data?.addOns[1] !== '') && (data?.addOns[1].title === 'Larger storage')) ? ' checked checkbox mr-4' : 'checkbox mr-4'}  
+                  onClick={(e) => handleCheck(e, 'storage')}/>
                   <div className='card_details 
                             flex flex-col justify-center
                             w-full h-full 
@@ -113,7 +117,9 @@ export default function AddOns() {
                       flex justify-between items-center
                       border border-solid border-gray-300
                   '>
-                  <input id='customizable_profile' type='checkbox' className='checkbox mr-4' onClick={(e) => handleCheck(e, 'profile')}/>
+                  <input id='customizable_profile' type='checkbox' 
+                  className={((data?.addOns[2] !== '') && (data?.addOns[2].title === 'Customizable profile')) ? ' checked checkbox mr-4' : 'checkbox mr-4'}  
+                  onClick={(e) => handleCheck(e, 'profile')}/>
                   <div className='card_details 
                             flex flex-col justify-center
                             w-full h-full 
