@@ -61,7 +61,7 @@ export default function AddOns() {
         <div className='w-full h-5/6'>
             <header>
               <h1 className='text-3xl 2xl:text-4xl font-bold'>Pick Add-ons</h1>
-              <p className='text-lg lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-1 2xl:mt-2 mb-2 2xl:mb-6'>
+              <p className='text-lg lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 mt-1 2xl:mt-2 mb-2 xl:mb-2 2xl:mb-4'>
                Add-ons help enhance your gaming experience.
               </p>
             </header>
@@ -69,7 +69,7 @@ export default function AddOns() {
             <div className='addOns_list flex flex-col'>
 
               <label htmlFor='online_service' className='selectable_cards 
-                      relative w-full h-24 xl:h-20 2xl:h-28 rounded-lg 
+                      relative w-full h-24 xl:h-24 2xl:h-28 rounded-lg 
                       cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
@@ -88,7 +88,7 @@ export default function AddOns() {
               </label>
 
               <label htmlFor='larger_storage' className='selectable_cards 
-                      relative w-full h-24 xl:h-20  2xl:h-28 rounded-lg 
+                      relative w-full h-24 xl:h-24  2xl:h-28 rounded-lg 
                       cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
@@ -108,7 +108,7 @@ export default function AddOns() {
               </label>
 
               <label htmlFor='customizable_profile' className='selectable_cards 
-                      relative w-full h-24 xl:h-20  2xl:h-28 rounded-lg 
+                      relative w-full h-24 xl:h-24  2xl:h-28 rounded-lg 
                       cursor-pointer px-4 xl:px-16 my-2
                       flex justify-between items-center
                       border border-solid border-gray-300
