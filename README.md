@@ -37,11 +37,11 @@ Users should be able to:
   - A step is submitted, but no selection has been made
 
 ### Screenshot
-![personalInfo page](C:\Users\HP\Documents\Template\palma\src\assets\personalInfo.jpg)
-![plans page](C:\Users\HP\Documents\Template\palma\src\assets\plan.jpg)
-![addOns page](C:\Users\HP\Documents\Template\palma\src\assets\addOns.jpg)
-![summary page](C:\Users\HP\Documents\Template\palma\src\assets\summary.jpg)
-![thankYou page](C:\Users\HP\Documents\Template\palma\src\assets\thnkYou.jpg)
+![personalInfo page](./src/assets/personalInfo.jpg)
+![plans page](./src/assets/plan.jpg)
+![addOns page](./src/assets/addOns.jpg)
+![summary page](./src//assets//summary.jpg)
+![thankYou page](./src/assets/thnkYou.jpg)
 
 ### Links
 
@@ -57,54 +57,6 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [TailwindCss](https://tailwindcss.com/) - For styles
 - [Redux and ReduxToolkit ](https://redux.js.org/redux-toolkit/) - For state management
-
-### What I learned
-
-```css
--During the course of building this project, I got a better understanding of mobile responsiveness using raw css. 
-I was able to decide the layout orientation for devices between 600px and 1024px and to ensure the project renders seamlessly on different devices.
--Using tailwindCss I achieved a better understanding of the css library, defining my styles and device width breakpoints for different devices while ensuring maximum functionality
-
-```js
-Though I previously learned useContext and recently learn the use of redux state management tool, This project presented the opportunity to put to practice my knowledge of redux, using redux toolkit for state management
-const proudOfThisFunc = () => {
-  name: 'purchaseStep',
-    initialState: {
-        step: 1,
-        personalInfo: ['', '', ''],
-        plan: ['', '', ''], 
-        addOns: ['', '', ''],
-        errorMessage: '',
-        errorField: ''
-    },
-    reducers: {
-        nextStep: (state) => {
-            state.step += 1
-        },
-        prevStep: (state) => {
-            state.step -= 1
-        },
-        changeStep: (state, action) => {
-            state.step -= action.payload
-        },
-        getPersonalInfo: (state, action) => {
-            state.personalInfo = action.payload
-        },
-        getPlan: (state, action) => {
-            state.plan = action.payload
-        },
-        getAddOns: (state, action) => {
-            state.addOns = action.payload
-        },
-        getErrorMessage: (state, action) => {
-            state.errorMessage = action.payload
-        },
-        getErrorField: (state, action) => {
-            state.errorField = action.payload
-        }
-    }
-}
-```
 
 ### Continued development
 
